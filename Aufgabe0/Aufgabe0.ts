@@ -8,7 +8,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace Aufgabe0 {
     function greet() {
-        let name = prompt("Wie ist dein Name?");
+        let name:string = prompt("Wie ist dein Name?");
         let node: HTMLElement = document.getElementById("content");
         node.innerHTML += "Hey " + name + ",wie geht es dir?";
         

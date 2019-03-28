@@ -11,7 +11,7 @@ var Aufgabe0;
         let name = prompt("Wie ist dein Name?");
         let node = document.getElementById("content");
         node.innerHTML += "Hey " + name + ",wie geht es dir?";
-        console.log("Hey ", name, ",wie geht es dir?");
+        console.log("Hey", name, ",wie geht es dir?");
     }
     document.addEventListener('DOMContentLoaded', greet);
 })(Aufgabe0 || (Aufgabe0 = {}));
