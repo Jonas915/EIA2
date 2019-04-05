@@ -1,0 +1,27 @@
+div{
+border:solid black;
+font-size:20px;
+width:100px;
+height:200px;
+position:absolute;
+bottom: 40px;
+}
+
+#Nachzieh{
+background-color:red;
+width:130px;
+position:absolute;
+top:1em;
+height:200px;
+border:solid black;
+}
+
+#Ablagestapel{
+background-color:yellow;
+position:absolute;
+right:2em;
+top:1em;
+width:130px;
+height:200px;
+border:solid black;
+}
