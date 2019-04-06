@@ -58,4 +58,4 @@ var Skat;
         s.left = (_y + 0.2) * 110 + "px";
     }
 })(Skat || (Skat = {}));
-//# sourceMappingURL=Aufgabe3.js.map
+//# sourceMappingURL=Aufgabe2.js.map
