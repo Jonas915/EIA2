@@ -1,0 +1,74 @@
+body>div{
+border:solid black;
+font-size:20px;
+width:100px;
+height:200px;
+position:absolute;
+bottom: 40px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    top: 300px;
+}
+main>div{
+    width: 130px;
+    height: 200px;
+    margin: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#Nachzieh{
+background-color:red;
+width:130px;
+position:absolute;
+top:1em;
+height:200px;
+border:solid black;
+}
+
+#Ablagestapel{
+background-color:yellow;
+position:absolute;
+right:2em;
+top:1em;
+width:130px;
+height:200px;
+border:solid black;
+}
+
+.Herz{
+    background-color: red;
+}
+
+.Pik{
+    background-color: black;
+}
+
+.Karo{
+    background-color: red;
+}
+
+.Kreuz{
+    background-color: black;
+}
+
+button{
+    position:absolute;
+    right: 20em;
+    top: 20em;
+    }
+
+.pile{
+    width:120px;
+    position:absolute;
+    top:0em;
+    width:120px;
+    height:200px;
+        }
+        
