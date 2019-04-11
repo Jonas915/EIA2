@@ -7,7 +7,7 @@ Bei diesem Code hatte ich zum Teil Hilfe von Markus Damm.
 
 //Vorbereitung: Arrays und Interface für Kartene erstellen
 namespace Skat {
-    document.addEventListener("DOMContentLoaded", Maumau);
+    document.addEventListener("DOMContentLoaded", maumau);
 
     interface Card {
         color: string;
@@ -22,8 +22,7 @@ namespace Skat {
     let pileCards: Card[] = [];
 
     //Hauptfunktionen
-    function Maumau() {
-        document.getElementById("Inhalt").addEventListener("click", removeCard);
+    function maumau() : void {
 
         //Promptfenster
         let numberCards: number;
@@ -41,12 +40,12 @@ namespace Skat {
     }
 
     //Anzahl Handkarten generieren
-    function createRandomNumber(x: number) {
+    function createRandomNumber(x: number) : number {
         return Math.floor(Math.random() * Math.floor(x))
     }
 
-    //discard
-    function removeCard(_event: MouseEvent) {
+    //discard and renew
+    /*function removeCard(_event: MouseEvent) {
         let main: HTMLElement = document.getElementById("Inhalt");
         let domCard: HTMLElement = <HTMLElement>_event.target;
         if (domCard != main) {
@@ -60,10 +59,10 @@ namespace Skat {
                 placeDiv(handCards[i].color, handCards[i].value, i)
             }
         }
-    }
+    }*/
 
     //Divs erstellen
-    function placeDiv(_color: string, _value: string, _y: number) {
+    function placeDiv(_color: string, _value: string, _y: number) : void {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Inhalt").appendChild(div);
         div.setAttribute("class", _color);

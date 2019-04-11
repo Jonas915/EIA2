@@ -16,7 +16,6 @@ var Skat;
     let pileCards = [];
     //Hauptfunktionen
     function Maumau() {
-        document.getElementById("Inhalt").addEventListener("click", removeCard);
         //Promptfenster
         let numberCards;
         let input = prompt("Hi, Melvin! Mit wie vielen Handkarten willst du spielen?");
@@ -34,22 +33,22 @@ var Skat;
     function createRandomNumber(x) {
         return Math.floor(Math.random() * Math.floor(x));
     }
-    //discard
-    function removeCard(_event) {
-        let main = document.getElementById("Inhalt");
-        let domCard = _event.target;
+    //discard and renew
+    /*function removeCard(_event: MouseEvent) {
+        let main: HTMLElement = document.getElementById("Inhalt");
+        let domCard: HTMLElement = <HTMLElement>_event.target;
         if (domCard != main) {
-            let index;
-            let domAttribute = domCard.getAttribute("id");
+            let index: number;
+            let domAttribute: string = domCard.getAttribute("id");
             domAttribute = domAttribute.substr(4);
             index = parseInt(domAttribute);
-            let karte = handCards.splice(index, 1)[0];
+            let karte: Card = handCards.splice(index, 1)[0];
             pileCards.push(karte);
-            for (let i = 0; i < handCards.length; i++) {
-                placeDiv(handCards[i].color, handCards[i].value, i);
+            for (let i: number = 0; i < handCards.length; i++) {
+                placeDiv(handCards[i].color, handCards[i].value, i)
             }
         }
-    }
+    }*/
     //Divs erstellen
     function placeDiv(_color, _value, _y) {
         let div = document.createElement("div");
