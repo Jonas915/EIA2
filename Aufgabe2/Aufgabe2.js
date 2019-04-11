@@ -7,7 +7,7 @@ Bei diesem Code hatte ich zum Teil Hilfe von Markus Damm.
 //Vorbereitung: Arrays und Interface für Kartene erstellen
 var Skat;
 (function (Skat) {
-    document.addEventListener("DOMContentLoaded", Maumau);
+    document.addEventListener("DOMContentLoaded", maumau);
     let allCards = [{ color: "Kreuz", value: "7" }, { color: "Kreuz", value: "8" }, { color: "Kreuz", value: "9" }, { color: "Kreuz", value: "10" }, { color: "Kreuz", value: "Bube" }, { color: "Kreuz", value: "Dame" }, { color: "Kreuz", value: "Koenig" }, { color: "Kreuz", value: "Ass" },
         { color: "Herz", value: "7" }, { color: "Herz", value: "8" }, { color: "Herz", value: "9" }, { color: "Herz", value: "10" }, { color: "Herz", value: "Bube" }, { color: "Herz", value: "Dame" }, { color: "Herz", value: "Koenig" }, { color: "Herz", value: "Ass" },
         { color: "Pik", value: "7" }, { color: "Pik", value: "8" }, { color: "Pik", value: "9" }, { color: "Pik", value: "10" }, { color: "Pik", value: "Bube" }, { color: "Pik", value: "Dame" }, { color: "Pik", value: "Koenig" }, { color: "Pik", value: "Ass" },
@@ -15,7 +15,7 @@ var Skat;
     let handCards = [];
     let pileCards = [];
     //Hauptfunktionen
-    function Maumau() {
+    function maumau() {
         //Promptfenster
         let numberCards;
         let input = prompt("Hi, Melvin! Mit wie vielen Handkarten willst du spielen?");

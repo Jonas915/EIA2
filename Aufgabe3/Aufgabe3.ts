@@ -7,7 +7,7 @@ Bei diesem Code hatte ich zum Teil Hilfe von Markus Damm.
 
 //Vorbereitung: Arrays und Interface für Kartene erstellen
 namespace Skat {
-    document.addEventListener("DOMContentLoaded", Maumau);
+    document.addEventListener("DOMContentLoaded", maumau);
 
     interface Card {
         color: string;
@@ -22,7 +22,7 @@ namespace Skat {
     let pileCards: Card[] = [];
 
     //Hauptfunktion
-    function Maumau() {
+    function maumau() {
         document.getElementById("button").addEventListener("click", sortCards);
         document.getElementById("Nachzieh").addEventListener("click", addCard);
         document.addEventListener("keydown", addCardSpace);
@@ -43,12 +43,12 @@ namespace Skat {
         }
     }
     //generate random number
-    function createRandomNumber(x: number) {
+    function createRandomNumber(x: number) : number {
         return Math.floor(Math.random() * Math.floor(x))
     }
 
     
-    function removeCard(_event: MouseEvent) {
+    function removeCard(_event: MouseEvent) : void {
         let main: HTMLElement = document.getElementById("Inhalt");
         let domCard: HTMLElement = <HTMLElement>_event.target;
         if (domCard != main) {
@@ -69,7 +69,7 @@ namespace Skat {
         }
     }
 
-    function deletePile() {
+    function deletePile() : void {
         let node: HTMLElement = document.getElementById("Ablagestapel");
         node.innerHTML = "Ablagestapel";
     }
