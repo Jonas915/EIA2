@@ -4,14 +4,14 @@ Matrikel: 260231
 Datum: 13.04.2019
 Bei diesem Code hatte ich zum Teil Hilfe von Markus Damm.
 **/
-//Vorbereitung: Arrays und Interface für Kartene erstellen
+//Vorbereitung: Arrays und Interface für Karten erstellen
 var Skat;
 (function (Skat) {
     document.addEventListener("DOMContentLoaded", maumau);
-    let allCards = [{ color: "Kreuz", value: "7" }, { color: "Kreuz", value: "8" }, { color: "Kreuz", value: "9" }, { color: "Kreuz", value: "10" }, { color: "Kreuz", value: "Bube" }, { color: "Kreuz", value: "Dame" }, { color: "Kreuz", value: "Koenig" }, { color: "Kreuz", value: "Ass" },
-        { color: "Herz", value: "7" }, { color: "Herz", value: "8" }, { color: "Herz", value: "9" }, { color: "Herz", value: "10" }, { color: "Herz", value: "Bube" }, { color: "Herz", value: "Dame" }, { color: "Herz", value: "Koenig" }, { color: "Herz", value: "Ass" },
-        { color: "Pik", value: "7" }, { color: "Pik", value: "8" }, { color: "Pik", value: "9" }, { color: "Pik", value: "10" }, { color: "Pik", value: "Bube" }, { color: "Pik", value: "Dame" }, { color: "Pik", value: "Koenig" }, { color: "Pik", value: "Ass" },
-        { color: "Karo", value: "7" }, { color: "Karo", value: "8" }, { color: "Karo", value: "9" }, { color: "Karo", value: "10" }, { color: "Karo", value: "Bube" }, { color: "Karo", value: "Dame" }, { color: "Karo", value: "Koenig" }, { color: "Karo", value: "Ass" },];
+    let allCards = [{ color: "Kreuz ", value: "7" }, { color: "Kreuz ", value: "8" }, { color: "Kreuz ", value: "9" }, { color: "Kreuz ", value: "10" }, { color: "Kreuz ", value: "Bube " }, { color: "Kreuz ", value: " Dame" }, { color: "Kreuz", value: "Koenig" }, { color: "Kreuz", value: "Ass" },
+        { color: "Herz ", value: "7" }, { color: "Herz ", value: "8" }, { color: "Herz ", value: "9" }, { color: "Herz ", value: "10" }, { color: "Herz ", value: " Bube" }, { color: "Herz ", value: " Dame" }, { color: "Herz ", value: " Koenig" }, { color: "Herz ", value: " Ass" },
+        { color: "Pik ", value: "7" }, { color: "Pik ", value: "8" }, { color: "Pik ", value: "9" }, { color: "Pik ", value: "10" }, { color: "Pik ", value: " Bube" }, { color: "Pik ", value: " Dame" }, { color: "Pik ", value: " Koenig" }, { color: "Pik ", value: " Ass" },
+        { color: "Karo ", value: "7" }, { color: "Karo ", value: "8" }, { color: "Karo ", value: "9" }, { color: "Karo ", value: "10" }, { color: "Karo ", value: " Bube" }, { color: "Karo ", value: " Dame" }, { color: "Karo ", value: " Koenig" }, { color: "Karo ", value: " Ass" },];
     let handCards = [];
     let pileCards = [];
     //Hauptfunktion
@@ -77,8 +77,8 @@ var Skat;
         }
     }
     function compareCards(card1, card2) {
-        var textA = card1.color.toUpperCase();
-        var textB = card2.color.toUpperCase();
+        let textA = card1.color.toUpperCase();
+        let textB = card2.color.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     }
     //add Card
@@ -96,7 +96,7 @@ var Skat;
     }
     //Leertaste addet Karte
     function addCardSpace(_event) {
-        var keyCode = _event.keyCode;
+        let keyCode = _event.keyCode;
         if (keyCode == 32) {
             addCard();
         }

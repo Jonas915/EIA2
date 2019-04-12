@@ -5,7 +5,7 @@ Datum: 13.04.2019
 Bei diesem Code hatte ich zum Teil Hilfe von Markus Damm.
 **/
 
-//Vorbereitung: Arrays und Interface für Kartene erstellen
+//Vorbereitung: Arrays und Interface für Karten erstellen
 namespace Skat {
     document.addEventListener("DOMContentLoaded", maumau);
 
@@ -14,15 +14,15 @@ namespace Skat {
         value: string;
     }
 
-    let allCards: Card[] = [ { color: "Kreuz", value: "7" }, { color: "Kreuz", value: "8" }, { color: "Kreuz", value: "9" }, { color: "Kreuz", value: "10" }, { color: "Kreuz", value: "Bube" }, { color: "Kreuz", value: "Dame" }, { color: "Kreuz", value: "Koenig" }, { color: "Kreuz", value: "Ass" },
-    { color: "Herz", value: "7" }, { color: "Herz", value: "8" }, { color: "Herz", value: "9" }, { color: "Herz", value: "10" }, { color: "Herz", value: "Bube" }, { color: "Herz", value: "Dame" }, { color: "Herz", value: "Koenig" }, { color: "Herz", value: "Ass" },
-    { color: "Pik", value: "7" }, { color: "Pik", value: "8" }, { color: "Pik", value: "9" }, { color: "Pik", value: "10" }, { color: "Pik", value: "Bube" }, { color: "Pik", value: "Dame" }, { color: "Pik", value: "Koenig" }, { color: "Pik", value: "Ass" },
-    { color: "Karo", value: "7" }, { color: "Karo", value: "8" }, { color: "Karo", value: "9" }, { color: "Karo", value: "10" }, { color: "Karo", value: "Bube" }, { color: "Karo", value: "Dame" }, { color: "Karo", value: "Koenig" }, { color: "Karo", value: "Ass" },]
+    let allCards: Card[] = [ { color: "Kreuz ", value: "7" }, { color: "Kreuz ", value: "8" }, { color: "Kreuz ", value: "9" }, { color: "Kreuz ", value: "10" }, { color: "Kreuz ", value: "Bube " }, { color: "Kreuz ", value: " Dame" }, { color: "Kreuz", value: "Koenig" }, { color: "Kreuz", value: "Ass" },
+    { color: "Herz ", value: "7" }, { color: "Herz ", value: "8" }, { color: "Herz ", value: "9" }, { color: "Herz ", value: "10" }, { color: "Herz ", value: " Bube" }, { color: "Herz ", value: " Dame" }, { color: "Herz ", value: " Koenig" }, { color: "Herz ", value: " Ass" },
+    { color: "Pik ", value: "7" }, { color: "Pik ", value: "8" }, { color: "Pik ", value: "9" }, { color: "Pik ", value: "10" }, { color: "Pik ", value: " Bube" }, { color: "Pik ", value: " Dame" }, { color: "Pik ", value: " Koenig" }, { color: "Pik ", value: " Ass" },
+    { color: "Karo ", value: "7" }, { color: "Karo ", value: "8" }, { color: "Karo ", value: "9" }, { color: "Karo ", value: "10" }, { color: "Karo ", value: " Bube" }, { color: "Karo ", value: " Dame" }, { color: "Karo ", value: " Koenig" }, { color: "Karo ", value: " Ass" },]
     let handCards: Card[] = [];
     let pileCards: Card[] = [];
 
     //Hauptfunktion
-    function maumau() {
+    function maumau() :void {
         document.getElementById("button").addEventListener("click", sortCards);
         document.getElementById("Nachzieh").addEventListener("click", addCard);
         document.addEventListener("keydown", addCardSpace);
@@ -74,7 +74,7 @@ namespace Skat {
         node.innerHTML = "Ablagestapel";
     }
 
-    function placePile(_color: string, _value: string, _y: number) {
+    function placePile(_color: string, _value: string, _y: number) : void {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Ablagestapel").appendChild(div);
         div.setAttribute("class", _color);
@@ -83,7 +83,7 @@ namespace Skat {
     }
 
     //Sortieren
-    function sortCards() {
+    function sortCards() : void {
         handCards.sort(compareCards);
         deleteCards();
         for (let i: number = 0; i < handCards.length; i++) {
@@ -92,13 +92,13 @@ namespace Skat {
     }
 
     function compareCards(card1: Card, card2: Card) {
-        var textA = card1.color.toUpperCase();
-        var textB = card2.color.toUpperCase();
+        let textA = card1.color.toUpperCase();
+        let textB = card2.color.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     }
 
     //add Card
-    function addCard() {
+    function addCard() :void {
         deleteCards();
         for (let i: number = 0; i < 1; i++) {
             let randomNumber: number = createRandomNumber(allCards.length);
@@ -113,20 +113,20 @@ namespace Skat {
     
 //Leertaste addet Karte
     function addCardSpace(_event: KeyboardEvent): void {
-        var keyCode: number = _event.keyCode;
+        let keyCode: number = _event.keyCode;
         if (keyCode == 32) {
             addCard();
         }
     }
 
     //Delete Cards
-    function deleteCards() {
+    function deleteCards() : void {
         let node: HTMLElement = document.getElementById("Inhalt");
         node.innerHTML = "";
     }
 
        //Divs erstellen
-       function placeDiv(_color: string, _value: string, _y: number) {
+       function placeDiv(_color: string, _value: string, _y: number) : void {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Inhalt").appendChild(div);
         div.setAttribute("class", _color);
