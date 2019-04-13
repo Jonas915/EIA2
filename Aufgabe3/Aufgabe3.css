@@ -44,18 +44,22 @@ border:solid black;
 
 .Herz{
     background-color: red;
+    color: white;
 }
 
 .Pik{
     background-color: black;
+    color: white;
 }
 
 .Karo{
     background-color: red;
+    color: white;
 }
 
 .Kreuz{
     background-color: black;
+    color: white;
 }
 
 button{

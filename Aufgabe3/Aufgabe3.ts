@@ -77,7 +77,7 @@ namespace Skat {
     function placePile(_color: string, _value: string, _y: number) : void {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Ablagestapel").appendChild(div);
-        div.setAttribute("class", _color);
+        div.setAttribute("class", _color + ", pile");
         div.setAttribute("id", "card" + _y);
         document.getElementById("card" + _y).innerHTML += _color +_value;
     }

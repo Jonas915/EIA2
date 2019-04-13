@@ -64,7 +64,7 @@ var Skat;
     function placePile(_color, _value, _y) {
         let div = document.createElement("div");
         document.getElementById("Ablagestapel").appendChild(div);
-        div.setAttribute("class", _color);
+        div.setAttribute("class", _color + ", pile");
         div.setAttribute("id", "card" + _y);
         document.getElementById("card" + _y).innerHTML += _color + _value;
     }
