@@ -81,7 +81,7 @@ var Skat;
         let textB = card2.color.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     }
-    //add Card
+    //Karte adden
     function addCard() {
         deleteCards();
         for (let i = 0; i < 1; i++) {
@@ -101,7 +101,7 @@ var Skat;
             addCard();
         }
     }
-    //Delete Cards
+    //Löscht Karten
     function deleteCards() {
         let node = document.getElementById("Inhalt");
         node.innerHTML = "";

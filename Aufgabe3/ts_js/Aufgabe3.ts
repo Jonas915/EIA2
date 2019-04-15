@@ -97,13 +97,13 @@ namespace Skat {
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     }
 
-    //add Card
+    //Karte adden
     function addCard() :void {
         deleteCards();
         for (let i: number = 0; i < 1; i++) {
             let randomNumber: number = createRandomNumber(allCards.length);
             let card: Card = allCards.splice(randomNumber, 1)[0];
-            handCards.push(card)
+            handCards.push(card);
         }
         for (let i: number = 0; i < handCards.length; i++) {
             console.log(handCards);
@@ -119,7 +119,7 @@ namespace Skat {
         }
     }
 
-    //Delete Cards
+    //Löscht Karten
     function deleteCards() : void {
         let node: HTMLElement = document.getElementById("Inhalt");
         node.innerHTML = "";
