@@ -54,7 +54,7 @@ namespace Skat {
         if (domCard != main) {
             let index: number;
             let domAttribute: string = domCard.getAttribute("id");
-            domAttribute = domAttribute.substr(4);
+            domAttribute = domAttribute.substr(domAttribute.length-1);
             index = parseInt(domAttribute);
             let karte: Card = handCards.splice(index, 1)[0];
             pileCards.push(karte);
@@ -78,8 +78,8 @@ namespace Skat {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Ablagestapel").appendChild(div);
         div.setAttribute("class", _color + ", pile");
-        div.setAttribute("id", "card" + _y);
-        document.getElementById("card" + _y).innerHTML += _color +_value;
+        div.setAttribute("id", "card" + _color + _value);
+        document.getElementById("card" + _color + _value).innerHTML += _color +_value;
     }
 
     //Sortieren
@@ -91,6 +91,7 @@ namespace Skat {
         }
     }
 
+//Vergleichen von zwei Karten
     function compareCards(card1: Card, card2: Card) {
         let textA = card1.color.toUpperCase();
         let textB = card2.color.toUpperCase();
@@ -130,7 +131,8 @@ namespace Skat {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Inhalt").appendChild(div);
         div.setAttribute("class", _color);
-        div.setAttribute("id", "card" + _y);
-        document.getElementById("card" + _y).innerHTML += _color +_value;
+        //div.setAttribute("id", "card" + _y);
+        div.setAttribute("id", "card" + _color + _value + _y);
+        document.getElementById("card" + _color + _value + _y).innerHTML += _color +_value;
     }
 }

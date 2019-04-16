@@ -43,7 +43,7 @@ var Skat;
         if (domCard != main) {
             let index;
             let domAttribute = domCard.getAttribute("id");
-            domAttribute = domAttribute.substr(4);
+            domAttribute = domAttribute.substr(domAttribute.length - 1);
             index = parseInt(domAttribute);
             let karte = handCards.splice(index, 1)[0];
             pileCards.push(karte);
@@ -65,8 +65,8 @@ var Skat;
         let div = document.createElement("div");
         document.getElementById("Ablagestapel").appendChild(div);
         div.setAttribute("class", _color + ", pile");
-        div.setAttribute("id", "card" + _y);
-        document.getElementById("card" + _y).innerHTML += _color + _value;
+        div.setAttribute("id", "card" + _color + _value);
+        document.getElementById("card" + _color + _value).innerHTML += _color + _value;
     }
     //Sortieren
     function sortCards() {
@@ -76,6 +76,7 @@ var Skat;
             placeDiv(handCards[i].color, handCards[i].value, i);
         }
     }
+    //Vergleichen von zwei Karten
     function compareCards(card1, card2) {
         let textA = card1.color.toUpperCase();
         let textB = card2.color.toUpperCase();
@@ -111,8 +112,9 @@ var Skat;
         let div = document.createElement("div");
         document.getElementById("Inhalt").appendChild(div);
         div.setAttribute("class", _color);
-        div.setAttribute("id", "card" + _y);
-        document.getElementById("card" + _y).innerHTML += _color + _value;
+        //div.setAttribute("id", "card" + _y);
+        div.setAttribute("id", "card" + _color + _value + _y);
+        document.getElementById("card" + _color + _value + _y).innerHTML += _color + _value;
     }
 })(Skat || (Skat = {}));
 //# sourceMappingURL=Aufgabe3.js.map
