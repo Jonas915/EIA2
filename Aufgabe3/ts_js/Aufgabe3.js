@@ -8,10 +8,10 @@ Bei diesem Code hatte ich zum Teil Hilfe von Markus Damm.
 var Skat;
 (function (Skat) {
     document.addEventListener("DOMContentLoaded", maumau);
-    let allCards = [{ color: "Kreuz ", value: "7" }, { color: "Kreuz ", value: "8" }, { color: "Kreuz ", value: "9" }, { color: "Kreuz ", value: "10" }, { color: "Kreuz ", value: "Bube " }, { color: "Kreuz ", value: " Dame" }, { color: "Kreuz ", value: " Koenig" }, { color: "Kreuz", value: "Ass" },
-        { color: "Herz ", value: "7" }, { color: "Herz ", value: "8" }, { color: "Herz ", value: "9" }, { color: "Herz ", value: "10" }, { color: "Herz ", value: " Bube" }, { color: "Herz ", value: " Dame" }, { color: "Herz ", value: " Koenig" }, { color: "Herz ", value: " Ass" },
-        { color: "Pik ", value: "7" }, { color: "Pik ", value: "8" }, { color: "Pik ", value: "9" }, { color: "Pik ", value: "10" }, { color: "Pik ", value: " Bube" }, { color: "Pik ", value: " Dame" }, { color: "Pik ", value: " Koenig" }, { color: "Pik ", value: " Ass" },
-        { color: "Karo ", value: "7" }, { color: "Karo ", value: "8" }, { color: "Karo ", value: "9" }, { color: "Karo ", value: "10" }, { color: "Karo ", value: " Bube" }, { color: "Karo ", value: " Dame" }, { color: "Karo ", value: " Koenig" }, { color: "Karo ", value: " Ass" },];
+    let allCards = [{ color: "Kreuz", value: "7" }, { color: "Kreuz", value: "8" }, { color: "Kreuz", value: "9" }, { color: "Kreuz", value: "10" }, { color: "Kreuz", value: "Bube" }, { color: "Kreuz", value: "Dame" }, { color: "Kreuz", value: "Koenig" }, { color: "Kreuz", value: "Ass" },
+        { color: "Herz", value: "7" }, { color: "Herz", value: "8" }, { color: "Herz", value: "9" }, { color: "Herz", value: "10" }, { color: "Herz", value: "Bube" }, { color: "Herz", value: "Dame" }, { color: "Herz", value: "Koenig" }, { color: "Herz", value: "Ass" },
+        { color: "Pik", value: "7" }, { color: "Pik", value: "8" }, { color: "Pik", value: "9" }, { color: "Pik", value: "10" }, { color: "Pik", value: "Bube" }, { color: "Pik", value: "Dame" }, { color: "Pik", value: "Koenig" }, { color: "Pik", value: "Ass" },
+        { color: "Karo", value: "7" }, { color: "Karo", value: "8" }, { color: "Karo", value: "9" }, { color: "Karo", value: "10" }, { color: "Karo", value: "Bube" }, { color: "Karo", value: "Dame" }, { color: "Karo", value: "Koenig" }, { color: "Karo", value: "Ass" },];
     let handCards = [];
     let pileCards = [];
     //Hauptfunktion
@@ -43,30 +43,36 @@ var Skat;
         if (domCard != main) {
             let index;
             let domAttribute = domCard.getAttribute("id");
-            domAttribute = domAttribute.substr(domAttribute.length - 1);
+            if (domAttribute.substr(domAttribute.length - 2).charAt(0) == "1"
+                || domAttribute.substr(domAttribute.length - 2).charAt(0) == "2"
+                || domAttribute.substr(domAttribute.length - 2).charAt(0) == "3") {
+                domAttribute = domAttribute.substr(domAttribute.length - 2);
+            }
+            else {
+                domAttribute = domAttribute.substr(domAttribute.length - 1);
+            }
             index = parseInt(domAttribute);
             let karte = handCards.splice(index, 1)[0];
             pileCards.push(karte);
             deleteCards();
-            deletePile();
             for (let i = 0; i < handCards.length; i++) {
                 placeDiv(handCards[i].color, handCards[i].value, i);
             }
-            for (let i = 0; i < pileCards.length; i++) {
-                placePile(pileCards[i].color, pileCards[i].value, i);
-            }
+            placePile(pileCards[pileCards.length - 1].color, pileCards[pileCards.length - 1].value, pileCards.length - 1);
+            console.log(pileCards);
         }
     }
     function deletePile() {
         let node = document.getElementById("Ablagestapel");
-        node.innerHTML = "Ablagestapel";
+        node.innerHTML = " ";
     }
     function placePile(_color, _value, _y) {
         let div = document.createElement("div");
+        deletePile();
         document.getElementById("Ablagestapel").appendChild(div);
-        div.setAttribute("class", _color + ", pile");
+        div.setAttribute("class", _color + " " + ", pile");
         div.setAttribute("id", "card" + _color + _value + _y);
-        document.getElementById("card" + _color + _value + _y).innerHTML += _color + _value;
+        document.getElementById("card" + _color + _value + _y).innerHTML += _color + " " + _value;
     }
     //Sortieren
     function sortCards() {
@@ -114,7 +120,7 @@ var Skat;
         div.setAttribute("class", _color);
         //div.setAttribute("id", "card" + _y);
         div.setAttribute("id", "card" + _color + _value + _y);
-        document.getElementById("card" + _color + _value + _y).innerHTML += _color + _value;
+        document.getElementById("card" + _color + _value + _y).innerHTML += _color + " " + _value;
     }
 })(Skat || (Skat = {}));
 //# sourceMappingURL=Aufgabe3.js.map
