@@ -14,7 +14,7 @@ namespace Skat {
         value: string;
     }
 
-    let allCards: Card[] = [ { color: "Kreuz ", value: "7" }, { color: "Kreuz ", value: "8" }, { color: "Kreuz ", value: "9" }, { color: "Kreuz ", value: "10" }, { color: "Kreuz ", value: "Bube " }, { color: "Kreuz ", value: " Dame" }, { color: "Kreuz", value: "Koenig" }, { color: "Kreuz", value: "Ass" },
+    let allCards: Card[] = [ { color: "Kreuz ", value: "7" }, { color: "Kreuz ", value: "8" }, { color: "Kreuz ", value: "9" }, { color: "Kreuz ", value: "10" }, { color: "Kreuz ", value: "Bube " }, { color: "Kreuz ", value: " Dame" }, { color: "Kreuz ", value: " Koenig" }, { color: "Kreuz", value: "Ass" },
     { color: "Herz ", value: "7" }, { color: "Herz ", value: "8" }, { color: "Herz ", value: "9" }, { color: "Herz ", value: "10" }, { color: "Herz ", value: " Bube" }, { color: "Herz ", value: " Dame" }, { color: "Herz ", value: " Koenig" }, { color: "Herz ", value: " Ass" },
     { color: "Pik ", value: "7" }, { color: "Pik ", value: "8" }, { color: "Pik ", value: "9" }, { color: "Pik ", value: "10" }, { color: "Pik ", value: " Bube" }, { color: "Pik ", value: " Dame" }, { color: "Pik ", value: " Koenig" }, { color: "Pik ", value: " Ass" },
     { color: "Karo ", value: "7" }, { color: "Karo ", value: "8" }, { color: "Karo ", value: "9" }, { color: "Karo ", value: "10" }, { color: "Karo ", value: " Bube" }, { color: "Karo ", value: " Dame" }, { color: "Karo ", value: " Koenig" }, { color: "Karo ", value: " Ass" },]
@@ -78,8 +78,8 @@ namespace Skat {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("Ablagestapel").appendChild(div);
         div.setAttribute("class", _color + ", pile");
-        div.setAttribute("id", "card" + _color + _value);
-        document.getElementById("card" + _color + _value).innerHTML += _color +_value;
+        div.setAttribute("id", "card" + _color + _value + _y);
+        document.getElementById("card" + _color + _value + _y).innerHTML += _color +_value;
     }
 
     //Sortieren
