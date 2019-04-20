@@ -16,17 +16,11 @@ namespace Aufgabe4 {
 
     //Variablen definieren für Verwendung
     let preisForm: number = 0;
-    let preisVanille: number = 0;
-    let preisSchokolade: number = 0;
-    let preisErdbeere: number = 0;
-    let preisApfel: number = 0;
+    let preisSorte1: number = 0;
+    let preisSorte2: number = 0;
+    let preisSorte3: number = 0;
+    let preisSorte4: number = 0;
     let preisVersand: number = 0
-
-    let vanilleAnzahl: number = 0;
-    let schokoladeAnzahl: number = 0;
-    let erdbeereAnzahl: number = 0;
-    let apfelAnzahl: number = 0;
-    let toppingAnzahl: number = 0;
     let adresse: string = "";
 
     //Interface mit Arrays erstellen, aus dem die Produkte genommen werden können
@@ -36,11 +30,11 @@ namespace Aufgabe4 {
     }
 
     let formOptionen: products[] = [{ name: "Becher", preis: 2}, { name: "Waffel", preis: 2}]
-    let eissorteVanille: products[] = [{ name: "Vanille", preis: 2}]
-    let eissorteSchokolade: products[] = [{ name: "Schokolade", preis: 2}]
-    let eissorteErdbeere: products[] = [{ name: "Erdbeere", preis: 2 }]
-    let eissorteApfel: products[] = [{ name: "Apfel", preis: 2 }]
-    let versandoptionen: products[] = [{name:"nichts ausgewählt", preis:0}, { name: "DHL", preis: 4 }, { name: "DPD", preis: 5 }, { name: "Brieftaube", preis: 10 }]
+    let eissorte1: products[] = [{name:"keine ausgewählt", preis: 0}, { name: "Vanille", preis: 2}, { name: "Schokolade", preis: 2}, { name: "Erdbeere", preis: 2 }, { name: "Apfel", preis: 2 }]
+    let eissorte2: products[] = [{name:"keine ausgewählt", preis: 0}, { name: "Vanille", preis: 2}, { name: "Schokolade", preis: 2}, { name: "Erdbeere", preis: 2 }, { name: "Apfel", preis: 2 }]
+    let eissorte3: products[] = [{name:"keine ausgewählt", preis: 0}, { name: "Vanille", preis: 2}, { name: "Schokolade", preis: 2}, { name: "Erdbeere", preis: 2 }, { name: "Apfel", preis: 2 }]
+    let eissorte4: products[] = [{name:"keine ausgewählt", preis: 0}, { name: "Vanille", preis: 2}, { name: "Schokolade", preis: 2}, { name: "Erdbeere", preis: 2 }, { name: "Apfel", preis: 2 }]
+    let versandoptionen: products[] = [{name:"keine ausgewählt", preis:0}, { name: "DHL", preis: 4 }, { name: "DPD", preis: 5 }, { name: "Brieftaube", preis: 10 }]
 
 
     //HTML aufbauen
@@ -57,42 +51,40 @@ namespace Aufgabe4 {
         }
         childNodeHTML += "<hr>";
 
-        //Auswahl der Eissorten mit Anzahl
-        childNodeHTML += "<h3>Wähle die Anzahl Kugeln aus</h3>";
+        //Auswahl der Eissorten 
 
-        //Vanille Anzahl
-        childNodeHTML += "<h4>Vanille:</h4>";
-        childNodeHTML += "<select name='Select' id='Menge1'>";
-        for (let i: number = 0; i < 5; i++) {
-            childNodeHTML += "<option value='*" + i + "'>" + i + "</option>";
+        //Sorte 1
+        childNodeHTML += "<h4>Sorte 1:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte1'>";
+        for (let i: number = 0; i < eissorte1.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte1[i].name + " " + eissorte1[i].preis + " Euro'>" + eissorte1[i].name + " " + eissorte1[i].preis + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
 
-         //Schokolade Anzahl
-         childNodeHTML += "<h4>Schokolade:</h4>";
-         childNodeHTML += "<select name=`Select` id=Menge2`>";
-         for (let i: number = 0; i < 5; i++) {
-             childNodeHTML += "<option value='*" + i + "'>" + i + "</option>";
+         //Sorte 2
+         childNodeHTML += "<h4>Sorte 2:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte2'>";
+        for (let i: number = 0; i < eissorte1.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte2[i].name + " " + eissorte2[i].preis + " Euro'>" + eissorte2[i].name + " " + eissorte2[i].preis + " Euro</option>";
+        }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<hr>";
+        
+         //Sorte 3
+         childNodeHTML += "<h4>Sorte 3:</h4>";
+         childNodeHTML += "<select name='Select' id='Sorte3'>";
+         for (let i: number = 0; i < eissorte3.length; i++) {
+             childNodeHTML += "<option value='" + i + eissorte3[i].name + " " + eissorte3[i].preis + " Euro'>" + eissorte3[i].name + " " + eissorte3[i].preis + " Euro</option>";
          }
          childNodeHTML += "</select>";
          childNodeHTML += "<hr>";
 
-         //Erdbeere Anzahl
-         childNodeHTML += "<h4>Erdbeere:</h4>";
-         childNodeHTML += "<select name=`Select` id=Menge3`>";
-         for (let i: number = 0; i < 5; i++) {
-             childNodeHTML += "<option value='*" + i + "'>" + i + "</option>";
-         }
-         childNodeHTML += "</select>";
-         childNodeHTML += "<hr>";
-
-         
-         //Apfel Anzahl
-         childNodeHTML += "<h4>Apfel:</h4>";
-         childNodeHTML += "<select name=`Select` id=Menge4`>";
-         for (let i: number = 0; i < 5; i++) {
-             childNodeHTML += "<option value='*" + i + "'>" + i + "</option>";
+         //Sorte 4
+         childNodeHTML += "<h4>Sorte 4:</h4>";
+         childNodeHTML += "<select name='Select' id='Sorte4'>";
+         for (let i: number = 0; i < eissorte4.length; i++) {
+             childNodeHTML += "<option value='" + i + eissorte4[i].name + " " + eissorte4[i].preis + " Euro'>" + eissorte4[i].name + " " + eissorte4[i].preis + " Euro</option>";
          }
          childNodeHTML += "</select>";
          childNodeHTML += "<hr>";
@@ -131,13 +123,13 @@ namespace Aufgabe4 {
             node.innerHTML = childNodeHTML;
         }
 
-        //Eissorten - Vanille Preis
+        //Sorte1
        if (target.id == "Menge1") {
             let node: HTMLElement = document.getElementById("Vanilla")
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisVanille = eissorteVanille[priceIndex].preis * vanilleAnzahl;
-            console.log(preisVanille)
+            preisSorte1 = eissorte1[priceIndex].preis
+            console.log(preisSorte1)
             let childNodeHTML: string;
 
             childNodeHTML = "";
@@ -148,13 +140,13 @@ namespace Aufgabe4 {
             node.innerHTML = childNodeHTML;
         }
 
-        //Eissorten - Schokolade Preis
+        //Sorte 2
         if (target.id == "Menge2") {
             let node: HTMLElement = document.getElementById("Chocolate")
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSchokolade = eissorteSchokolade[priceIndex].preis
-            console.log(preisVanille)
+            preisSorte2 = eissorte2[priceIndex].preis
+            console.log(preisSorte2)
             let childNodeHTML: string;
 
             childNodeHTML = "";
@@ -165,13 +157,13 @@ namespace Aufgabe4 {
             node.innerHTML = childNodeHTML;
         }
 
-         //Eissorten - Erdbeere Preis
+         //Sorte 3
          if (target.id == "Menge3") {
             let node: HTMLElement = document.getElementById("Strawberry")
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisErdbeere = eissorteErdbeere[priceIndex].preis
-            console.log(preisVanille)
+            preisSorte3 = eissorte3[priceIndex].preis
+            console.log(preisSorte3)
             let childNodeHTML: string;
 
             childNodeHTML = "";
@@ -182,13 +174,13 @@ namespace Aufgabe4 {
             node.innerHTML = childNodeHTML;
         }
 
-         //Eissorten - Apfel Preis
+         //Sorte 4
          if (target.id == "Menge4") {
             let node: HTMLElement = document.getElementById("Apple")
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisApfel = eissorteApfel[priceIndex].preis
-            console.log(preisVanille)
+            preisSorte4 = eissorte4[priceIndex].preis
+            console.log(preisSorte4)
             let childNodeHTML: string;
 
             childNodeHTML = "";
@@ -234,7 +226,7 @@ namespace Aufgabe4 {
 
         childNodeHTML = "";
         childNodeHTML += "<a>";
-        childNodeHTML += (preisVersand + preisForm + preisVanille + preisSchokolade + preisErdbeere + preisApfel);
+        childNodeHTML += (preisVersand + preisForm + preisSorte1 + preisSorte2 + preisSorte3 + preisSorte4);
         childNodeHTML += " Euro";
         childNodeHTML += "</a>";
 
@@ -243,7 +235,7 @@ namespace Aufgabe4 {
 
     // Checken ob alles ausgefüllt ist
     function checkCheckout(_event: Event): void {
-        if (adresse == "" || preisForm == 0 || preisVanille == 0 || preisSchokolade == 0 || preisErdbeere == 0 || preisApfel == 0 || preisVersand == 0 || vanilleAnzahl == 0 || schokoladeAnzahl == 0 || erdbeereAnzahl == 0 || apfelAnzahl == 0) {
+        if (adresse == "" || preisForm == 0 || preisSorte1 == 0 || preisSorte2 == 0 || preisSorte3 == 0 || preisSorte4 == 0 || preisVersand == 0) {
             document.getElementById("missing").innerHTML = "Es fehlen Angaben";
         }
 
