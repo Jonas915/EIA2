@@ -40,14 +40,14 @@ var Aufgabe4;
         childNodeHTML += "<h3>Waffel oder Becher?</h3>";
         for (let i = 0; i < formOptionen.length; i++) {
             childNodeHTML += "<input type='radio' name='Radiogroup' value='" + i + formOptionen[i].name + " " + formOptionen[i].preis + " Euro'  id='radio" + i + "' />";
-            childNodeHTML += "<label for='check" + i + "'>" + formOptionen[i].name + " " + formOptionen[i].preis + " Euro</label>";
+            childNodeHTML += "<label for='check" + i + "'>" + formOptionen[i].name;
         }
         childNodeHTML += "<hr>";
         //Auswahl der Eissorten mit Anzahl
         childNodeHTML += "<h3>Wähle die Anzahl Kugeln aus</h3>";
         //Vanille Anzahl
         childNodeHTML += "<h4>Vanille:</h4>";
-        childNodeHTML += "<select name=`Select` id=Menge1`>";
+        childNodeHTML += "<select name='Select' id='Menge1'>";
         for (let i = 0; i < 5; i++) {
             childNodeHTML += "<option value='*" + i + "'>" + i + "</option>";
         }
@@ -107,47 +107,19 @@ var Aufgabe4;
             node.innerHTML = childNodeHTML;
         }
         //Eissorten - Vanille Preis
-        if (target.id == "kugeln") {
+        if (target.id == "Menge1") {
             let node = document.getElementById("Vanilla");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            preisVanille = eissorteVanille[priceIndex].preis;
+            preisVanille = eissorteVanille[priceIndex].preis * vanilleAnzahl;
             console.log(preisVanille);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
-            childNodeHTML += "</a>";
-            node.innerHTML = childNodeHTML;
-        }
-        if (target.id == "Menge1") {
-            let node = document.getElementById("VanillaMenge");
-            let value = target.value;
-            let numIndex = parseInt(value.substr(1, 2));
-            vanilleAnzahl = numIndex;
-            console.log(vanilleAnzahl);
-            let childNodeHTML;
-            childNodeHTML = "";
-            childNodeHTML += "<a>";
-            childNodeHTML += " " + target.value;
-            childNodeHTML += "</a>";
-            node.innerHTML = childNodeHTML;
-        }
-        /*if (target.id == "Menge1") {
-            let node: HTMLElement = document.getElementById("Vanilla")
-            let value: string = target.value;
-            let priceIndex: number = parseInt(value.substr(0, 1));
-            preisVanille = eissorteVanille[priceIndex].preis
-            console.log(preisVanille)
-            let childNodeHTML: string;
-
-            childNodeHTML = "";
-            childNodeHTML += "<a>";
             childNodeHTML += " " + value;
             childNodeHTML += "</a>";
-
             node.innerHTML = childNodeHTML;
-        }*/
+        }
         //Eissorten - Schokolade Preis
         if (target.id == "Menge2") {
             let node = document.getElementById("Chocolate");
@@ -172,7 +144,7 @@ var Aufgabe4;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += " " + value;
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
@@ -219,14 +191,14 @@ var Aufgabe4;
         let childNodeHTML;
         childNodeHTML = "";
         childNodeHTML += "<a>";
-        childNodeHTML += (preisVersand + preisForm + (preisVanille * vanilleAnzahl) + preisSchokolade + preisErdbeere + preisApfel);
+        childNodeHTML += (preisVersand + preisForm + preisVanille + preisSchokolade + preisErdbeere + preisApfel);
         childNodeHTML += " Euro";
         childNodeHTML += "</a>";
         node.innerHTML = childNodeHTML;
     }
     // Checken ob alles ausgefüllt ist
     function checkCheckout(_event) {
-        if (adresse == "" || preisForm == 0 || preisVanille == 0 || preisSchokolade == 0 || preisErdbeere == 0 || preisApfel == 0 || preisVersand == 0 || vanilleAnzahl == 0 || schokoladeAnzahl == 0 || erdbeereAnzahl == 0 || apfelAnzahl == 0 || toppingAnzahl == 0) {
+        if (adresse == "" || preisForm == 0 || preisVanille == 0 || preisSchokolade == 0 || preisErdbeere == 0 || preisApfel == 0 || preisVersand == 0 || vanilleAnzahl == 0 || schokoladeAnzahl == 0 || erdbeereAnzahl == 0 || apfelAnzahl == 0) {
             document.getElementById("missing").innerHTML = "Es fehlen Angaben";
         }
         else {

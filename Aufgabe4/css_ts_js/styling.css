@@ -26,12 +26,12 @@ aside {
 	position: absolute;
 	top: 68px;
 	left: 395px;
-    width: 300px;
+    width: 260px;
     border-style: double;
     border-width: 5px;
 	border-color:black;
 	padding-bottom: 10px;
-	padding-left: 15px;
+	padding-left: 12px;
 	background-Color: white;
 }
 
