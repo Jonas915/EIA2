@@ -50,7 +50,7 @@ var Aufgabe4;
         //Sorte 2
         childNodeHTML += "<h4>Sorte 2:</h4>";
         childNodeHTML += "<select name='Select' id='Sorte2'>";
-        for (let i = 0; i < eissorte1.length; i++) {
+        for (let i = 0; i < eissorte2.length; i++) {
             childNodeHTML += "<option value='" + i + eissorte2[i].name + " " + eissorte2[i].preis + " Euro'>" + eissorte2[i].name + " " + eissorte2[i].preis + " Euro</option>";
         }
         childNodeHTML += "</select>";
@@ -101,7 +101,7 @@ var Aufgabe4;
             node.innerHTML = childNodeHTML;
         }
         //Sorte1
-        if (target.id == "Menge1") {
+        if (target.id == "Sorte1") {
             let node = document.getElementById("Vanilla");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
@@ -110,12 +110,12 @@ var Aufgabe4;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value;
+            childNodeHTML += " " + value.substr(1);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
         //Sorte 2
-        if (target.id == "Menge2") {
+        if (target.id == "Sorte2") {
             let node = document.getElementById("Chocolate");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
@@ -129,7 +129,7 @@ var Aufgabe4;
             node.innerHTML = childNodeHTML;
         }
         //Sorte 3
-        if (target.id == "Menge3") {
+        if (target.id == "Sorte3") {
             let node = document.getElementById("Strawberry");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
@@ -138,12 +138,12 @@ var Aufgabe4;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value;
+            childNodeHTML += " " + value.substr(1);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
         //Sorte 4
-        if (target.id == "Menge4") {
+        if (target.id == "Sorte4") {
             let node = document.getElementById("Apple");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
