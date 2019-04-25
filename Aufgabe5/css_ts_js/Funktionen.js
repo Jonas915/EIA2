@@ -24,7 +24,7 @@ var Aufgabe5;
     function writeHTML() {
         let node = document.getElementById("fieldset");
         document.getElementById("button").addEventListener("click", checkCheckout);
-        let childNodeHTML;
+        let childNodeHTML = "";
         //Auswahl Waffel oder Becher
         childNodeHTML += "<h3>Waffel oder Becher?</h3>";
         for (let i = 0; i < Aufgabe5.formOptionen.length; i++) {

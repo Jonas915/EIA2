@@ -28,7 +28,7 @@ namespace Aufgabe5 {
     function writeHTML(): void {
         let node: HTMLElement = document.getElementById("fieldset");
         document.getElementById("button").addEventListener("click", checkCheckout);
-        let childNodeHTML: string;
+        let childNodeHTML: string ="";
 
         //Auswahl Waffel oder Becher
         childNodeHTML += "<h3>Waffel oder Becher?</h3>";
