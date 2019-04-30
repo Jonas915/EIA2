@@ -186,11 +186,20 @@ var Aufgabe5;
     }
     // Checken ob alles ausgefüllt ist
     function checkCheckout(_event) {
-        if (adresse == "" || preisForm == 0 || preisSorte1 == 0 || preisSorte2 == 0 || preisSorte3 == 0 || preisSorte4 == 0 || preisVersand == 0) {
-            document.getElementById("missing").innerHTML = "Es fehlen Angaben";
+        if (adresse == "") /* || preisForm == 0 || preisSorte1 == 0)*/ {
+            document.getElementById("missing1").innerHTML = "Adresse angeben";
+        }
+        if (preisForm == 0) {
+            document.getElementById("missing2").innerHTML = "Form wählen";
+        }
+        if (preisVersand == 0) {
+            document.getElementById("missing3").innerHTML = "Versandoption wählen";
+        }
+        if (preisSorte1 == 0) {
+            document.getElementById("missing4").innerHTML = "Sorte 1 wählen";
         }
         else {
-            document.getElementById("missing").innerHTML = "";
+            document.getElementById("missing5").innerHTML = "";
         }
     }
 })(Aufgabe5 || (Aufgabe5 = {}));
