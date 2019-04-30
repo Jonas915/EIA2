@@ -5,8 +5,11 @@ Datum: 28.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 var Aufgabe5;
 (function (Aufgabe5) {
-    document.addEventListener("DOMContentLoaded", writeHTML);
-    document.addEventListener("DOMContentLoaded", changeListener);
+    document.addEventListener("DOMContentLoaded", init);
+    function init(_event) {
+        writeHTML();
+        changeListener(_event);
+    }
     //Change Listener
     function changeListener(_event) {
         let fieldset = document.getElementById("fieldset");

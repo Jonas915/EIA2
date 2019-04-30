@@ -5,8 +5,13 @@ Datum: 28.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 
 namespace Aufgabe5 {
-    document.addEventListener("DOMContentLoaded", writeHTML);
-    document.addEventListener("DOMContentLoaded", changeListener);
+
+    document.addEventListener("DOMContentLoaded", init);
+
+    function init(_event: Event) {
+        writeHTML();
+        changeListener(_event);
+    }
 
     //Change Listener
     function changeListener(_event: Event): void {
