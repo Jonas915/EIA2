@@ -37,7 +37,7 @@ var Aufgabe5;
         childNodeHTML += "<hr>";
         //Auswahl der Eissorten 
         //Sorte 1
-        childNodeHTML += "<h4>Sorte 1:</h4>";
+        childNodeHTML += "<h4>Kugel 1:</h4>";
         childNodeHTML += "<select name='Select' id='Sorte1'>";
         for (let i = 0; i < Aufgabe5.eissorte1.length; i++) {
             childNodeHTML += "<option value='" + i + Aufgabe5.eissorte1[i].name + " " + Aufgabe5.eissorte1[i].preis + " Euro'>" + Aufgabe5.eissorte1[i].name + " " + Aufgabe5.eissorte1[i].preis + " Euro</option>";
@@ -45,7 +45,7 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
         //Sorte 2
-        childNodeHTML += "<h4>Sorte 2:</h4>";
+        childNodeHTML += "<h4>Kugel 2:</h4>";
         childNodeHTML += "<select name='Select' id='Sorte2'>";
         for (let i = 0; i < Aufgabe5.eissorte2.length; i++) {
             childNodeHTML += "<option value='" + i + Aufgabe5.eissorte2[i].name + " " + Aufgabe5.eissorte2[i].preis + " Euro'>" + Aufgabe5.eissorte2[i].name + " " + Aufgabe5.eissorte2[i].preis + " Euro</option>";
@@ -53,7 +53,7 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
         //Sorte 3
-        childNodeHTML += "<h4>Sorte 3:</h4>";
+        childNodeHTML += "<h4>Kugel 3:</h4>";
         childNodeHTML += "<select name='Select' id='Sorte3'>";
         for (let i = 0; i < Aufgabe5.eissorte3.length; i++) {
             childNodeHTML += "<option value='" + i + Aufgabe5.eissorte3[i].name + " " + Aufgabe5.eissorte3[i].preis + " Euro'>" + Aufgabe5.eissorte3[i].name + " " + Aufgabe5.eissorte3[i].preis + " Euro</option>";
@@ -61,7 +61,7 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
         //Sorte 4
-        childNodeHTML += "<h4>Sorte 4:</h4>";
+        childNodeHTML += "<h4>Kugel 4:</h4>";
         childNodeHTML += "<select name='Select' id='Sorte4'>";
         for (let i = 0; i < Aufgabe5.eissorte4.length; i++) {
             childNodeHTML += "<option value='" + i + Aufgabe5.eissorte4[i].name + " " + Aufgabe5.eissorte4[i].preis + " Euro'>" + Aufgabe5.eissorte4[i].name + " " + Aufgabe5.eissorte4[i].preis + " Euro</option>";
@@ -189,7 +189,7 @@ var Aufgabe5;
     }
     // Checken ob alles ausgefüllt ist
     function checkCheckout(_event) {
-        if (adresse == "") /* || preisForm == 0 || preisSorte1 == 0)*/ {
+        if (adresse == "") {
             document.getElementById("missing1").innerHTML = "Adresse angeben";
         }
         if (preisForm == 0) {
