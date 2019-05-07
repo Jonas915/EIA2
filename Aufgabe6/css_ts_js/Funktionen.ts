@@ -1,5 +1,5 @@
-/* Aufgabe: 5
-Name: Jonas Meujen
+/* Aufgabe: 6
+Name: Jonas Meujen 
 Matrikel: 260231
 Datum: 28.04.2019 
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
@@ -9,7 +9,7 @@ namespace Aufgabe5 {
     document.addEventListener("DOMContentLoaded", init);
 
     function init(_event: Event) {
-        writeHTML();
+        writeHTML(aussenArray);//übergebe das große/äußere Array
         changeListener(_event);
     }
 
@@ -30,72 +30,79 @@ namespace Aufgabe5 {
 
 
     //HTML aufbauen
-    function writeHTML(): void {
+    function writeHTML(_AussenArr:aussen): void {//das äußere Array wird empfangen und in eine Varriable gespeichert
         let node: HTMLElement = document.getElementById("fieldset");
         document.getElementById("button").addEventListener("click", checkCheckout);
         let childNodeHTML: string = "";
-
-        //Auswahl Waffel oder Becher
-        childNodeHTML += "<h3>Waffel oder Becher?</h3>";
-        for (let i: number = 0; i < formOptionen.length; i++) {
-            childNodeHTML += "<input type='radio' name='Radiogroup' value='" + i + formOptionen[i].name + " " + formOptionen[i].preis + " Euro'  id='radio" + i + "' />";
-            childNodeHTML += "<label for='check" + i + "'>" + formOptionen[i].name;
-        }
-        childNodeHTML += "<hr>";
-
-        //Auswahl der Eissorten 
-
-        //Sorte 1
-        childNodeHTML += "<h4>Kugel 1:</h4>";
-        childNodeHTML += "<select name='Select' id='Sorte1'>";
-        for (let i: number = 0; i < eissorte1.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte1[i].name + " " + eissorte1[i].preis + " Euro'>" + eissorte1[i].name + " " + eissorte1[i].preis + " Euro</option>";
-        }
-        childNodeHTML += "</select>";
-        childNodeHTML += "<hr>";
-
-        //Sorte 2
-        childNodeHTML += "<h4>Kugel 2:</h4>";
-        childNodeHTML += "<select name='Select' id='Sorte2'>";
-        for (let i: number = 0; i < eissorte2.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte2[i].name + " " + eissorte2[i].preis + " Euro'>" + eissorte2[i].name + " " + eissorte2[i].preis + " Euro</option>";
-        }
-        childNodeHTML += "</select>";
-        childNodeHTML += "<hr>";
-
-        //Sorte 3
-        childNodeHTML += "<h4>Kugel 3:</h4>";
-        childNodeHTML += "<select name='Select' id='Sorte3'>";
-        for (let i: number = 0; i < eissorte3.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte3[i].name + " " + eissorte3[i].preis + " Euro'>" + eissorte3[i].name + " " + eissorte3[i].preis + " Euro</option>";
-        }
-        childNodeHTML += "</select>";
-        childNodeHTML += "<hr>";
-
-        //Sorte 4
-        childNodeHTML += "<h4>Kugel 4:</h4>";
-        childNodeHTML += "<select name='Select' id='Sorte4'>";
-        for (let i: number = 0; i < eissorte4.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte4[i].name + " " + eissorte4[i].preis + " Euro'>" + eissorte4[i].name + " " + eissorte4[i].preis + " Euro</option>";
-        }
-        childNodeHTML += "</select>";
-        childNodeHTML += "<hr>";
-
-        //Lieferoptionen
-        childNodeHTML += "<h3>Lieferoptionen</h3>";
-        childNodeHTML += "<select name='Select' id='ship'>";
-        for (let i: number = 0; i < versandoptionen.length; i++) {
-            childNodeHTML += "<option value='" + i + versandoptionen[i].name + " " + versandoptionen[i].preis + " Euro'>" + versandoptionen[i].name + " " + versandoptionen[i].preis + " Euro</option>";
-        }
-        childNodeHTML += "</select>";
-        childNodeHTML += "<br>";
-
-        //Adresse
-        childNodeHTML += "<h3>Adresse</h3>";
-        childNodeHTML += "<input id='ad' type='text' name='Text' placeholder='Adresse hier eingeben' required/>";
-        node.innerHTML += childNodeHTML;
+        for (let key in _AussenArr){
+            let innenArray:products[]= _AussenArr[key];
+            switch(key){
+                case "formOptionen":{//wenn das der Fall ist bau mir bitte folgendes in mein HTML als Dropdown
+                    childNodeHTML += "<h3>Waffel oder Becher?</h3>";
+                    for (let i: number = 0; i < innenArray.length; i++) {
+                        childNodeHTML += "<input type='radio' name='Radiogroup' value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'  id='radio" + i + "' />";
+                        childNodeHTML += "<label for='check" + i + "'>" + innenArray[i].name;
+                    }
+                    childNodeHTML += "<hr>";
+                    break;//lass die Schleife weiter laufen und beende den switch-case
+                    }
+                case "eissorte1":{//bau die erste Eissorte als Dropdown
+                    childNodeHTML += "<h4>Kugel 1:</h4>";
+                    childNodeHTML += "<select name='Select' id='Sorte1'>";
+                    for (let i: number = 0; i < innenArray.length; i++) {
+                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                    }
+                    childNodeHTML += "</select>";
+                    childNodeHTML += "<hr>";
+                    break;//lass die Schleife weiter laufen und beende den switch-case
+                }
+                case "eissorte2":{//bau die nächste Eissorte als Dropdown
+                    childNodeHTML += "<h4>Kugel 2:</h4>";
+                    childNodeHTML += "<select name='Select' id='Sorte2'>";
+                    for (let i: number = 0; i < innenArray.length; i++) {
+                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                    }
+                    childNodeHTML += "</select>";
+                    childNodeHTML += "<hr>";
+                    break;//lass die Schleife weiter laufen und beende den switch-case
+                }  
+                case "eissorte3":{//bau die nächste Eissorte als Dropdown
+                    childNodeHTML += "<h4>Kugel 3:</h4>";
+                    childNodeHTML += "<select name='Select' id='Sorte3'>";
+                    for (let i: number = 0; i < innenArray.length; i++) {
+                         childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                    }
+                    childNodeHTML += "</select>";
+                    childNodeHTML += "<hr>";
+                    break;//lass die Schleife weiter laufen und beende den switch-case
+                }
+                case "eissorte4":{//bau die letzte Eissorte als Dropdown
+                    childNodeHTML += "<h4>Kugel 4:</h4>";
+                    childNodeHTML += "<select name='Select' id='Sorte4'>";
+                    for (let i: number = 0; i < innenArray.length; i++) {
+                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                    }
+                    childNodeHTML += "</select>";
+                    childNodeHTML += "<hr>";
+                    break;//lass die Schleife weiter laufen und beende den switch-case
+                }  
+                case "versandoptionen":{//bau die Lieferoptionen als Dropdown
+                    childNodeHTML += "<h3>Lieferoptionen</h3>";
+                    childNodeHTML += "<select name='Select' id='ship'>";
+                    for (let i: number = 0; i < innenArray.length; i++) {
+                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                    }
+                    childNodeHTML += "</select>";
+                    childNodeHTML += "<br>";
+                    //bau wenn du hier bist auch noch das Adressfeld
+                    childNodeHTML += "<h3>Adresse</h3>";
+                    childNodeHTML += "<input id='ad' type='text' name='Text' placeholder='Adresse hier eingeben' required/>";
+                    node.innerHTML += childNodeHTML;
+                    break;//lass die Schleife weiter laufen und beende den switch-case
+                }
+            }
+        }    
     }
-
     function handleChange(_event: Event): void {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
         //Becher oder Waffel - Preis
@@ -103,7 +110,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Form");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisForm = formOptionen[priceIndex].preis;
+            preisForm = aussenArray["formOptionen"][priceIndex].preis;//nimm das äußere Array und davon die formOptionen und davon wiederum den gespeicheten Preis
             console.log(preisForm);
             let childNodeHTML: string;
 
@@ -120,7 +127,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Vanilla");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte1 = eissorte1[priceIndex].preis;
+            preisSorte1 = aussenArray["eissorte1"][priceIndex].preis;
             console.log(preisSorte1);
             let childNodeHTML: string;
 
@@ -137,7 +144,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Chocolate");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte2 = eissorte2[priceIndex].preis;
+            preisSorte2 = aussenArray["eissorte2"][priceIndex].preis;
             console.log(preisSorte2);
             let childNodeHTML: string;
 
@@ -154,7 +161,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Strawberry");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte3 = eissorte3[priceIndex].preis;
+            preisSorte3 = aussenArray["eissorte3"][priceIndex].preis;
             console.log(preisSorte3);
             let childNodeHTML: string;
 
@@ -171,7 +178,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Apple");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte4 = eissorte4[priceIndex].preis;
+            preisSorte4 = aussenArray["eissorte4"][priceIndex].preis;
             console.log(preisSorte4);
             let childNodeHTML: string;
 
@@ -188,8 +195,8 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Shipping");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisVersand = versandoptionen[priceIndex].preis;
-            console.log(versandoptionen);
+            preisVersand = aussenArray["versandoptionen"][priceIndex].preis;
+            //console.log(versandoptionen);
             let childNodeHTML: string;
 
             childNodeHTML = "";
@@ -243,4 +250,5 @@ namespace Aufgabe5 {
                 document.getElementById("missing5").innerHTML = "";
             }
         }
+        
     }
