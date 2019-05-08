@@ -42,7 +42,7 @@ var Aufgabe5;
                 }
                 case "eissorte1": { //bau die erste Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 1:</h4>";
-                    childNodeHTML += "<select name='Sorte 1' id='Sorte1'>";
+                    childNodeHTML += "<select name='Sorte1' id='Sorte1'>";
                     childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
                         childNodeHTML += "<option number=" + i + " value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
@@ -53,7 +53,7 @@ var Aufgabe5;
                 }
                 case "eissorte2": { //bau die nächste Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 2:</h4>";
-                    childNodeHTML += "<select name='Sorte 2' id='Sorte2'>";
+                    childNodeHTML += "<select name='Sorte2' id='Sorte2'>";
                     childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
                         childNodeHTML += "<option number=" + i + "value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
@@ -64,7 +64,7 @@ var Aufgabe5;
                 }
                 case "eissorte3": { //bau die nächste Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 3:</h4>";
-                    childNodeHTML += "<select name='Sorte 3' id='Sorte3'>";
+                    childNodeHTML += "<select name='Sorte3' id='Sorte3'>";
                     childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
                         childNodeHTML += "<option number=" + i + "value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
@@ -75,7 +75,7 @@ var Aufgabe5;
                 }
                 case "eissorte4": { //bau die letzte Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 4:</h4>";
-                    childNodeHTML += "<select name='Sorte 4' id='Sorte4'>";
+                    childNodeHTML += "<select name='Sorte4' id='Sorte4'>";
                     childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
                         childNodeHTML += "<option number=" + i + "value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
@@ -86,7 +86,7 @@ var Aufgabe5;
                 }
                 case "versandoptionen": { //bau die Lieferoptionen als Dropdown
                     childNodeHTML += "<h3>Lieferoptionen</h3>";
-                    childNodeHTML += "<select name='Versand' id='ship'>";
+                    childNodeHTML += "<select name='Versandart' id='ship'>";
                     for (let i = 0; i < innenArray.length; i++) {
                         childNodeHTML += "<option value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
                     }
