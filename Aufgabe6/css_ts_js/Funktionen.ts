@@ -114,7 +114,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Form");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisForm = aussenArray["formOptionen"][priceIndex].preis;//nimm das äußere Array und davon die formOptionen und davon wiederum den gespeicheten Preis
+            //preisForm = aussenArray["formOptionen"][priceIndex].preis;//nimm das äußere Array und davon die formOptionen und davon wiederum den gespeicheten Preis
             console.log(preisForm);
             let childNodeHTML: string;
 
@@ -131,7 +131,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Vanilla");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte1 = aussenArray["eissorte1"][priceIndex].preis;
+            //preisSorte1 = aussenArray["eissorte1"][priceIndex].preis;
             console.log(preisSorte1);
             let childNodeHTML: string;
 
@@ -149,7 +149,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Chocolate");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte2 = aussenArray["eissorte2"][priceIndex].preis;
+            //preisSorte2 = aussenArray["eissorte2"][priceIndex].preis;
             console.log(preisSorte2);
             let childNodeHTML: string;
 
@@ -166,7 +166,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Strawberry");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte3 = aussenArray["eissorte3"][priceIndex].preis;
+            //preisSorte3 = aussenArray["eissorte3"][priceIndex].preis;
             console.log(preisSorte3);
             let childNodeHTML: string;
 
@@ -183,7 +183,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Apple");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisSorte4 = aussenArray["eissorte4"][priceIndex].preis;
+            //preisSorte4 = aussenArray["eissorte4"][priceIndex].preis;
             console.log(preisSorte4);
             let childNodeHTML: string;
 
@@ -200,7 +200,7 @@ namespace Aufgabe5 {
             let node: HTMLElement = document.getElementById("Shipping");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            preisVersand = aussenArray["versandoptionen"][priceIndex].preis;
+            //preisVersand = aussenArray["versandoptionen"][priceIndex].preis;
             let childNodeHTML: string;
 
             childNodeHTML = "";
