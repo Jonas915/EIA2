@@ -17,28 +17,24 @@ namespace Aufgabe5 {
         "formOptionen":[{ name: "Becher", preis: 2}, 
                         { name: "Waffel", preis: 2}],
         "eissorte1":[
-                    {name:"keine ausgewählt", preis: 0}, 
                     {name: "Himbeere", preis: 2}, 
                     { name: "Vanille", preis: 2}, 
                     { name: "Schokolade", preis: 2}, 
                     { name: "Erdbeere", preis: 2 }, 
                     { name: "Apfel", preis: 2 }],
         "eissorte2":[
-                    {name:"keine ausgewählt", preis: 0}, 
                     {name: "Himbeere", preis: 2}, 
                     { name: "Vanille", preis: 2}, 
                     { name: "Schokolade", preis: 2}, 
                     { name: "Erdbeere", preis: 2 }, 
                     { name: "Apfel", preis: 2 }],
         "eissorte3":[
-                    {name:"keine ausgewählt", preis: 0}, 
                     {name: "Himbeere", preis: 2}, 
                     { name: "Vanille", preis: 2}, 
                     { name: "Schokolade", preis: 2}, 
                     { name: "Erdbeere", preis: 2 }, 
                     { name: "Apfel", preis: 2 }],
         "eissorte4":[
-                    {name:"keine ausgewählt", preis: 0}, 
                     {name: "Himbeere", preis: 2}, 
                     { name: "Vanille", preis: 2}, 
                     { name: "Schokolade", preis: 2}, 

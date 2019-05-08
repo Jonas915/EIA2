@@ -34,17 +34,18 @@ var Aufgabe5;
                 case "formOptionen": { //wenn das der Fall ist bau mir bitte folgendes in mein HTML als Dropdown
                     childNodeHTML += "<h3>Waffel oder Becher?</h3>";
                     for (let i = 0; i < innenArray.length; i++) {
-                        childNodeHTML += "<input type='radio' name='Radiogroup' value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'  id='radio" + i + "' />";
-                        childNodeHTML += "<label for='check" + i + "'>" + innenArray[i].name;
+                        childNodeHTML += "<input type='radio' name='Form' value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'  id='radio" + i + "' />";
+                        childNodeHTML += "<label for='check" + "'>" + innenArray[i].name;
                     }
                     childNodeHTML += "<hr>";
                     break; //lass die Schleife weiter laufen und beende den switch-case
                 }
                 case "eissorte1": { //bau die erste Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 1:</h4>";
-                    childNodeHTML += "<select name='Select' id='Sorte1'>";
+                    childNodeHTML += "<select name='Sorte1' id='Sorte1'>";
+                    childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
-                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                        childNodeHTML += "<option number=" + i + " value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
                     }
                     childNodeHTML += "</select>";
                     childNodeHTML += "<hr>";
@@ -52,9 +53,10 @@ var Aufgabe5;
                 }
                 case "eissorte2": { //bau die nächste Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 2:</h4>";
-                    childNodeHTML += "<select name='Select' id='Sorte2'>";
+                    childNodeHTML += "<select name='Sorte2' id='Sorte2'>";
+                    childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
-                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                        childNodeHTML += "<option number=" + i + "value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
                     }
                     childNodeHTML += "</select>";
                     childNodeHTML += "<hr>";
@@ -62,9 +64,10 @@ var Aufgabe5;
                 }
                 case "eissorte3": { //bau die nächste Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 3:</h4>";
-                    childNodeHTML += "<select name='Select' id='Sorte3'>";
+                    childNodeHTML += "<select name='Sorte3' id='Sorte3'>";
+                    childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
-                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                        childNodeHTML += "<option number=" + i + "value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
                     }
                     childNodeHTML += "</select>";
                     childNodeHTML += "<hr>";
@@ -72,9 +75,10 @@ var Aufgabe5;
                 }
                 case "eissorte4": { //bau die letzte Eissorte als Dropdown
                     childNodeHTML += "<h4>Kugel 4:</h4>";
-                    childNodeHTML += "<select name='Select' id='Sorte4'>";
+                    childNodeHTML += "<select name='Sorte4' id='Sorte4'>";
+                    childNodeHTML += "<option value=''</option>";
                     for (let i = 0; i < innenArray.length; i++) {
-                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                        childNodeHTML += "<option number=" + i + "value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
                     }
                     childNodeHTML += "</select>";
                     childNodeHTML += "<hr>";
@@ -82,15 +86,15 @@ var Aufgabe5;
                 }
                 case "versandoptionen": { //bau die Lieferoptionen als Dropdown
                     childNodeHTML += "<h3>Lieferoptionen</h3>";
-                    childNodeHTML += "<select name='Select' id='ship'>";
+                    childNodeHTML += "<select name='Versand' id='ship'>";
                     for (let i = 0; i < innenArray.length; i++) {
-                        childNodeHTML += "<option value='" + i + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
+                        childNodeHTML += "<option value='" + innenArray[i].name + " " + innenArray[i].preis + " Euro'>" + innenArray[i].name + " " + innenArray[i].preis + " Euro</option>";
                     }
                     childNodeHTML += "</select>";
                     childNodeHTML += "<br>";
                     //bau wenn du hier bist auch noch das Adressfeld
                     childNodeHTML += "<h3>Adresse</h3>";
-                    childNodeHTML += "<input id='ad' type='text' name='Text' placeholder='Adresse hier eingeben' required/>";
+                    childNodeHTML += "<input id='ad' type='text' name='Adresse' placeholder='Adresse hier eingeben' required/>";
                     node.innerHTML += childNodeHTML;
                     break; //lass die Schleife weiter laufen und beende den switch-case
                 }
@@ -100,7 +104,7 @@ var Aufgabe5;
     function handleChange(_event) {
         let target = _event.target;
         //Becher oder Waffel - Preis
-        if (target.name == "Radiogroup") {
+        if (target.name == "Form") {
             let node = document.getElementById("Form");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
@@ -109,7 +113,7 @@ var Aufgabe5;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += " " + value.substr(0);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
@@ -123,7 +127,8 @@ var Aufgabe5;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += " " + value.substr(0);
+            console.log(value.substr(1));
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
@@ -137,7 +142,7 @@ var Aufgabe5;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += " " + value.substr(0);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
@@ -151,7 +156,7 @@ var Aufgabe5;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += " " + value.substr(0);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
@@ -165,7 +170,7 @@ var Aufgabe5;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += " " + value.substr(0);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
@@ -175,11 +180,10 @@ var Aufgabe5;
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
             preisVersand = Aufgabe5.aussenArray["versandoptionen"][priceIndex].preis;
-            //console.log(versandoptionen);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
-            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += " " + value.substr(0);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
@@ -198,7 +202,7 @@ var Aufgabe5;
         let childNodeHTML;
         childNodeHTML = "";
         childNodeHTML += "<a>";
-        childNodeHTML += (preisVersand + preisForm + preisSorte1 + preisSorte2 + preisSorte3 + preisSorte4);
+        childNodeHTML += (preisForm + preisVersand + preisSorte1 + preisSorte2 + preisSorte3 + preisSorte4);
         childNodeHTML += " Euro";
         childNodeHTML += "</a>";
         node.innerHTML = childNodeHTML;
