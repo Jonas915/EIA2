@@ -24,7 +24,7 @@ function handleRequest(_request, _response) {
     _response.setHeader("Access-Control-Allow-Origin", "*");
     let url = Url.parse(_request.url, true);
     for (let key in url.query)
-        _response.write("<li>" + key + "</li>");
+        _response.write(key + ":" + url.query[key] + "<br/>");
     _response.end();
 }
 //# sourceMappingURL=Server.js.map

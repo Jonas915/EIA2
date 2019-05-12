@@ -97,7 +97,7 @@ var eisdealer;
                 document.getElementById("price").innerHTML = start.toFixed(2).toString() + "Euro";
                 let sorten = document.createElement("li");
                 sorten.setAttribute("id", `${check[i].value}_x_${check[i].name}`);
-                sorten.innerHTML = `${check[i].value} x ${check[i].name}`;
+                sorten.innerHTML = `${check[i].value} ${check[i].name}`;
                 document.getElementById("sorten").appendChild(sorten);
             }
             if (check[i].checked == true && check[i].name == "shipping") {
@@ -157,7 +157,7 @@ var eisdealer;
             document.getElementById("action").appendChild(fieldset2nd);
             fieldset2nd.setAttribute("id", "server");
             if (document.getElementById) {
-                fieldset2nd.innerHTML = "Wir haben deine Bestellung erhalten" + xhr.response;
+                fieldset2nd.innerHTML = "Wir haben deine Bestellung erhalten. Deine Bestellung besteht aus:" + xhr.response;
                 console.log();
                 address = "https://fleischfackeln24.herokuapp.com/?";
             }

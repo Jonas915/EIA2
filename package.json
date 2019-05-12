@@ -5,7 +5,7 @@
 	"author": "Jirka, adapted by Lukas",
 	"main": "Server.js",
 	"scripts": {
-		"start": "node Aufgabe6/Server/Server.js"
+		"start": "node Aufgabe7/css_ts_js/Server.js"
 	},
 	"engines": {
 		"node": "8.11.3"

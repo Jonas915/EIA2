@@ -29,6 +29,7 @@ import * as Url from "url";
 
 		let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 		for (let key in url.query)
-			_response.write("<li>" + key + "</li>");
+		_response.write(key + ":" + url.query[key] + "<br/>") ;
+
 		_response.end();
 	}
