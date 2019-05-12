@@ -104,7 +104,7 @@ namespace eisdealer {
                 start += price;
                 document.getElementById("price").innerHTML = start.toFixed(2).toString() + "Euro";
                 let sorten: HTMLElement = document.createElement("li");
-                sorten.setAttribute("id", `${check[i].value}_x_${check[i].name}`);
+                sorten.setAttribute("id", `${check[i].value} x ${check[i].name}`);
                 sorten.innerHTML = `${check[i].value} ${check[i].name}`;
                 document.getElementById("sorten").appendChild(sorten);
             }
@@ -161,13 +161,13 @@ namespace eisdealer {
     function finishRequest(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            console.log("response: " + xhr.response);
+            console.log("response " + xhr.response);
             let fieldset2nd: HTMLFieldSetElement = document.createElement("fieldset");
             document.getElementById("action").appendChild(fieldset2nd);
             
             fieldset2nd.setAttribute("id", "server");
             if (document.getElementById) {
-            fieldset2nd.innerHTML = "Wir haben deine Bestellung erhalten. Deine Bestellung besteht aus:" + xhr.response;
+            fieldset2nd.innerHTML = "Das hast du bestellt: " + xhr.response;
             console.log();
             address = "https://fleischfackeln24.herokuapp.com/?";
             }

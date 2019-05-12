@@ -19,8 +19,8 @@ var eisdealer;
         ],
         "toppings": [
             { name: "Schlachsahne", price: 2, type: "checkbox" },
-            { name: "Smarties", price: 2, type: "checkbox" },
-            { name: "Sosse", price: 2, type: "checkbox" }
+            { name: "Schmarties", price: 2, type: "checkbox" },
+            { name: "Schogosose", price: 2, type: "checkbox" }
         ],
     };
 })(eisdealer || (eisdealer = {}));
