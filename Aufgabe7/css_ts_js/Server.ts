@@ -1,6 +1,12 @@
-import * as Http from "http";
+/* Aufgabe: 7
+Name: Jonas Meujen 
+Matrikel: 260231
+Datum: 12.05.2019 
+Dieser Code wurde von mir alleine geschrieben und nicht kopiert oder diktiert.*/
 
-namespace L05_Server {
+import * as Http from "http";
+import * as Url from "url";
+
 	console.log("Starting server");
 	let port: number = Number(process.env.PORT);
 	if (!port)
@@ -16,13 +22,13 @@ namespace L05_Server {
 	}
 
 	function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-		console.log(_request.url);
+		console.log("Request");
 
 		_response.setHeader("content-type", "text/html; charset=utf-8");
 		_response.setHeader("Access-Control-Allow-Origin", "*");
 
-		_response.write(_request.url);
-
+		let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+		for (let key in url.query)
+			_response.write("<li>" + key + "</li>");
 		_response.end();
 	}
-}
