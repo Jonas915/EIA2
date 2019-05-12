@@ -178,7 +178,7 @@ var Aufgabe5;
         if (target.id == "ship") {
             let node = document.getElementById("Shipping");
             let value = target.value;
-            let priceIndex = parseInt(value.substr(0, 1));
+            let priceIndex = parseInt(value.substr(0));
             //preisVersand = aussenArray["versandoptionen"][priceIndex].preis;
             let childNodeHTML;
             childNodeHTML = "";

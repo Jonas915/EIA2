@@ -199,7 +199,7 @@ namespace Aufgabe5 {
         if (target.id == "ship") {
             let node: HTMLElement = document.getElementById("Shipping");
             let value: string = target.value;
-            let priceIndex: number = parseInt(value.substr(0, 1));
+            let priceIndex: number = parseInt(value.substr(0));
             //preisVersand = aussenArray["versandoptionen"][priceIndex].preis;
             let childNodeHTML: string;
 
