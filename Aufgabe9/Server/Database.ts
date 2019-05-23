@@ -12,7 +12,6 @@ let students: Mongo.Collection;
 
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
-    //    databaseURL = "mongodb://username:password@hostname:port/database";
     databaseURL = "mongodb://testuser:testpasswort123@ds119395.mlab.com:19395/eia2";
     databaseName = "eia2";
 }

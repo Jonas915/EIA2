@@ -1,21 +1,14 @@
-<!--
-Name: Jonas Meujen
-Matrikel: 260231
-Aufgabe: 9
-Datum: 23.05.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Client und Datenbank</title>
+<title>Datenbank & Client</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="DatabaseClient.css" type="text/css" media="screen"/>
 <script src="DatabaseClient.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 	<fieldset id="input">
-		<legend>Daten hier eingeben</legend>
+		<legend>Hier Daten vom Studierenden eingeben </legend>
 		<input type="text" name="name" placeholder="Nachname" id="name" />
 		<input type="text" name="firstname" placeholder="Vorname" id="firstname" />
 		<input type="text" name="matrikel" placeholder="Matrikelnummer" id="matrikel" />
@@ -23,8 +16,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 		<button type="button" id="insert">Zur Datenbank hinzufügen</button>
 	</fieldset>
 	<fieldset id="output">
-		<legend>Daten aller Studierenden</legend>
-		<button type="button" id="refresh">Refresh</button>
+		<legend>Alle Daten der Datenbank anzeigen</legend>
+		<button type="button" id="refresh">Aktualisieren</button>
 		<textarea rows="20" cols="90"> </textarea>
 		<input type="text" name="Matrikelnummer" placeholder="Matrikelnummer eingeben" id="matnumber">
 		<button type="button" id="findbutton">Matrikelnummer suchen</button>

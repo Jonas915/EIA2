@@ -30,7 +30,7 @@ function handleRequest(_request, _response) {
                 matrikel: parseInt(query["matrikel"])
             };
             Database.insert(student);
-            respond(_response, "Daten gespeichert");
+            respond(_response, "storing data");
             break;
         case "refresh":
             Database.findAll(findCallback);
@@ -51,7 +51,6 @@ function handleRequest(_request, _response) {
     }
 }
 function respond(_response, _text) {
-    //console.log("Preparing response: " + _text);
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write(_text);

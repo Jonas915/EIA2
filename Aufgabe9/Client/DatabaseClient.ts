@@ -1,10 +1,9 @@
 namespace DatabaseClient {
     window.addEventListener("load", init);
-    //let serverAddress: string = "http://localhost:8100";
-    let serverAddress: string = "https://fleischfackeln24.herokuapp.com/";    
 
     function init(_event: Event): void {
         console.log("Init");
+        let serverAddress: string = "https://eia-cata.herokuapp.com/"; 
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         let findButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("findbutton");
@@ -27,14 +26,14 @@ namespace DatabaseClient {
         let query: string = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
-    
+
     function find(_event: Event): void {
         let search: HTMLInputElement = <HTMLInputElement>document.getElementById("matnumber");
         let query: string = "command=find";
-        query += "&matrikel=" + search.value ;
+        query += "&matrikel=" + search.value;
         console.log(query);
         sendRequest(query, handleFindResponse);
-        }
+    }
 
     function sendRequest(_query: string, _callback: EventListener): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
