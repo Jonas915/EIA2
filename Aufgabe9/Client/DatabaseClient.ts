@@ -2,11 +2,11 @@ namespace DatabaseClient {
     window.addEventListener("load", init);
 
     function init(_event: Event): void {
-        console.log("Init");
-        let serverAddress: string = "https://eia-cata.herokuapp.com/"; 
+        console.log("Init"); 
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         let findButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("findbutton");
+        let serverAddress: string = "https://eia-cata.herokuapp.com/";
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
         findButton.addEventListener("click", find);
