@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>DatabaseClient</title>
+<title>Datenbank & Client</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="DatabaseClient.css" type="text/css" media="screen"/>
 <script src="DatabaseClient.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 	<fieldset id="input">
-		<legend> Type student data here </legend>
-		<input type="text" name="name" placeholder="name" id="name" />
-		<input type="text" name="firstname" placeholder="firstname" id="firstname" />
-		<input type="text" name="matrikel" placeholder="matrikel" id="matrikel" />
+		<legend>Daten hier eingeben</legend>
+		<input type="text" name="name" placeholder="Nachname" id="name" />
+		<input type="text" name="firstname" placeholder="Vorname" id="firstname" />
+		<input type="text" name="matrikel" placeholder="Matrikelnummer" id="matrikel" />
 		
-		<button type="button" id="insert">Insert to database</button>
+		<button type="button" id="insert">Zur Datenbank hinzufügen</button>
 	</fieldset>
 	<fieldset id="output">
-		<legend> All student data </legend>
-		<button type="button" id="refresh">Refresh</button>
+		<legend>Gesamte Datenbank </legend>
+		<button type="button" id="refresh">Aktualisieren</button>
 		<textarea rows="20" cols="90"> </textarea>
 		<input type="text" name="Matrikelnummer" placeholder="Matrikelnummer eingeben" id="matnumber">
 		<button type="button" id="findbutton">Finde Matrikelnummer</button>
