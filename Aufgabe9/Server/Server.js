@@ -1,9 +1,8 @@
-"use strict";
 /**
  * Simple server managing between client and database
  * @author: Jirka Dell'Oro-Friedl
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+"use strict";
 const Http = require("http");
 const Url = require("url");
 const Database = require("./Database");
@@ -51,6 +50,7 @@ function handleRequest(_request, _response) {
     }
 }
 function respond(_response, _text) {
+    //console.log("Preparing response: " + _text);
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write(_text);

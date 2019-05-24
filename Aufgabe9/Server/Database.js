@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Simple database insertion and query for MongoDB
  * @author: Jirka Dell'Oro-Friedl
@@ -12,6 +11,7 @@ let db;
 let students;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
+    //    databaseURL = "mongodb://username:password@hostname:port/database";
     databaseURL = "mongodb://testuser:testpasswort123@ds119395.mlab.com:19395/eia2";
     databaseName = "eia2";
 }
