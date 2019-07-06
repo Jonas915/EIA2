@@ -8,7 +8,7 @@ const Http = require("http");
 const Url = require("url");
 const Database = require("./Database");
 console.log("Server starting");
-let port = process.env.PORT;
+let port = Number(process.env.PORT);
 if (port == undefined)
     port = 8100;
 let server = Http.createServer();
@@ -24,11 +24,11 @@ function handleRequest(_request, _response) {
     var command = query["command"];
     switch (command) {
         case "insert":
-            let student = {
+            let abschlussarbeit = {
                 name: query["name"],
-                matrikel: parseInt(query["matrikel"])
+                score: parseInt(query["score"])
             };
-            Database.insert(student);
+            Database.insert(abschlussarbeit);
             respond(_response, "storing data");
             break;
         case "refresh":
@@ -36,7 +36,7 @@ function handleRequest(_request, _response) {
             break;
         case "find":
             let matrikel = {
-                matrikel: parseInt(query["matrikel"])
+                score: parseInt(query["matrikel"])
             };
             Database.find(matrikel, findCallback);
             break;
