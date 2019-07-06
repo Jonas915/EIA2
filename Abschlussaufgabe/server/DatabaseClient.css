@@ -1,0 +1,14 @@
+* /*{
+	display: block;
+	
+}*/
+
+head {
+	display: none;
+}
+
+fieldset {
+	width: 100px;
+	float: right;
+	position: top;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Datenbank & Client</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="./server/DatabaseClient.css" type="text/css" media="screen"/>
+<script src="./server/DatabaseClient.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<canvas id="canvas" width="288" height="512"></canvas>
+	<button onclick="reload()" id="reload">Spiel neu straten</button>
+	
+    
+	 <fieldset id="input">
+		<legend>Name eingeben</legend>
+		<input type="text" name="name" placeholder="Nachname" id="name"/>
+		<input type="text" name="matrikel" placeholder="Matrikelnummer" id="matrikel" />
+		<button type="button" id="insert">Zur Datenbank hinzufügen</button>
+	</fieldset>
+	<fieldset id="output">
+		<legend>Highscore Liste </legend>
+		<button type="button" id="refresh">Aktualisieren</button>
+		<textarea rows="20" cols="90"> </textarea>
+	</fieldset>
+	<script src="main.js"></script>
+</body>
+</html>
