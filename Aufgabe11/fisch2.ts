@@ -4,7 +4,7 @@ Matrikel: 260231
 Datum: 12.06.2019 
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 
-namespace aquarium {
+namespace aquarium2 {
 export class Fisch2 {
     x: number;
     y: number;

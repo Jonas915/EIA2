@@ -40,7 +40,9 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             respond(_response, "storing data");
             break;
         case "refresh":
+            console.log("vor findAll");
             Database.findAll(findCallback);
+            console.log("nach findAll");
             break;
         case "find":
             let matrikel: MatrikelData = {

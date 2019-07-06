@@ -14,13 +14,14 @@ var DatabaseClient;
         let inputs = document.getElementsByTagName("input");
         let query = "command=insert";
         query += "&name=" + inputs[0].value;
-        query += "&matrikel=" + inputs[2].value;
-        console.log(query);
+        query += "&score=" + inputs[1].value;
+        console.log("neu" + query);
         sendRequest(query, handleInsertResponse);
     }
     function refresh(_event) {
         let query = "command=refresh";
-        sendRequest(query, handleFindResponse);
+        console.log("2");
+        sendRequest(query, handleInsertResponse);
     }
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();
@@ -38,9 +39,8 @@ var DatabaseClient;
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let output = document.getElementsByTagName("textarea")[0];
-            output.value = xhr.response;
-            let responseAsJson = JSON.parse(xhr.response);
-            console.log(responseAsJson);
+            console.log(xhr.response);
+            output.value = "test";
         }
     }
 })(DatabaseClient || (DatabaseClient = {}));

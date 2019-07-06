@@ -1,7 +1,7 @@
 namespace DatabaseClient {
     window.addEventListener("load", init);
     //let serverAddress: string = "http://localhost:8100";
-    let serverAddress: string = "https://eia-cata.herokuapp.com/";    
+    let serverAddress: string = "https://eia-cata.herokuapp.com/";
 
     function init(_event: Event): void {
         console.log("Init");
@@ -14,7 +14,7 @@ namespace DatabaseClient {
     }
 
     function insert(_event: Event): void {
-        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query: string = "command=insert";
         query += "&name=" + inputs[0].value;
         query += "&firstname=" + inputs[1].value;
@@ -27,14 +27,14 @@ namespace DatabaseClient {
         let query: string = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
-    
-     function find(_event: Event): void {
+
+    function find(_event: Event): void {
         let search: HTMLInputElement = <HTMLInputElement>document.getElementById("matnumber");
         let query: string = "command=find";
-        query += "&matrikel=" + search.value ;
+        query += "&matrikel=" + search.value;
         console.log(query);
         sendRequest(query, handleFindResponse);
-        }
+    }
 
     function sendRequest(_query: string, _callback: EventListener): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();

@@ -32,7 +32,9 @@ function handleRequest(_request, _response) {
             respond(_response, "storing data");
             break;
         case "refresh":
+            console.log("vor findAll");
             Database.findAll(findCallback);
+            console.log("nach findAll");
             break;
         case "find":
             let matrikel = {

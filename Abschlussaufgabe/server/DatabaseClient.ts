@@ -15,14 +15,15 @@ namespace DatabaseClient {
         let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query: string = "command=insert";
         query += "&name=" + inputs[0].value;
-        query += "&matrikel=" + inputs[2].value;
-        console.log(query);
+        query += "&score=" + inputs[1].value;
+        console.log("neu" + query);
         sendRequest(query, handleInsertResponse);
     }
 
     function refresh(_event: Event): void {
         let query: string = "command=refresh";
-        sendRequest(query, handleFindResponse);
+        console.log("2");
+        sendRequest(query, handleInsertResponse);
     }
     
 
@@ -44,9 +45,8 @@ namespace DatabaseClient {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
-            output.value = xhr.response;
-            let responseAsJson: JSON = JSON.parse(xhr.response);
-            console.log(responseAsJson);
+            console.log(xhr.response);
+            output.value = "test";
         }
     }
 }
