@@ -40,7 +40,7 @@ var DatabaseClient;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let output = document.getElementsByTagName("textarea")[0];
             console.log(xhr.response);
-            output.value = "test";
+            output.value = xhr.response;
         }
     }
 })(DatabaseClient || (DatabaseClient = {}));

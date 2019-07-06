@@ -46,7 +46,7 @@ namespace DatabaseClient {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
             console.log(xhr.response);
-            output.value = "test";
+            output.value = xhr.response;
         }
     }
 }

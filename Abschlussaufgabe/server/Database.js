@@ -61,9 +61,11 @@ function findAll(_callback) {
     function prepareAnswer(_e, studentArray) {
         if (_e)
             _callback("Error" + _e);
-        else
+        else {
             // stringify creates a json-string, passed it back to _callback
+            console.log("Datenbank: " + JSON.stringify(studentArray));
             _callback(JSON.stringify(studentArray));
+        }
     }
 }
 exports.findAll = findAll;

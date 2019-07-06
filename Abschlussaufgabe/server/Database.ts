@@ -67,8 +67,10 @@ export function findAll(_callback: Function): void {
     function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {
         if (_e)
             _callback("Error" + _e);
-        else
+        else {
             // stringify creates a json-string, passed it back to _callback
+            console.log("Datenbank: " + JSON.stringify(studentArray));
             _callback(JSON.stringify(studentArray));
+        }
     }
 }
