@@ -21,7 +21,7 @@ var DatabaseClient;
     function refresh(_event) {
         let query = "command=refresh";
         console.log("2");
-        sendRequest(query, handleInsertResponse);
+        sendRequest(query, handleFindResponse);
     }
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();

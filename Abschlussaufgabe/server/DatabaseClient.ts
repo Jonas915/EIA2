@@ -23,7 +23,7 @@ namespace DatabaseClient {
     function refresh(_event: Event): void {
         let query: string = "command=refresh";
         console.log("2");
-        sendRequest(query, handleInsertResponse);
+        sendRequest(query, handleFindResponse);
     }
     
 
