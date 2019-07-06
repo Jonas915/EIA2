@@ -32,11 +32,11 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
 
     switch (command) {
         case "insert":
-            let student: StudentData = {
+            let abschlussarbeit: StudentData = {
                 name: query["name"],
-                matrikel: parseInt(query["matrikel"])
+                score: parseInt(query["score"])
             };
-            Database.insert(student);
+            Database.insert(abschlussarbeit);
             respond(_response, "storing data");
             break;
         case "refresh":
@@ -44,7 +44,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             break;
         case "find":
             let matrikel: MatrikelData = {
-                matrikel: parseInt(query["matrikel"])
+                score: parseInt(query["matrikel"])
                 };
             Database.find(matrikel, findCallback);
             break;
