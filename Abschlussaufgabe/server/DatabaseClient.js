@@ -1,5 +1,5 @@
-var DatabaseClient;
-(function (DatabaseClient) {
+var Abschlussaufgabe;
+(function (Abschlussaufgabe) {
     window.addEventListener("load", init);
     //let serverAddress: string = "http://localhost:8100";
     let serverAddress = "https://fleischfackeln24.herokuapp.com/";
@@ -43,5 +43,5 @@ var DatabaseClient;
             output.value = xhr.response;
         }
     }
-})(DatabaseClient || (DatabaseClient = {}));
+})(Abschlussaufgabe || (Abschlussaufgabe = {}));
 //# sourceMappingURL=DatabaseClient.js.map

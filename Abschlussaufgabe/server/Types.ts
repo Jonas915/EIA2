@@ -1,12 +1,8 @@
-interface AssocStringString {
-    [key: string]: string;
-}
+    export interface AssocxStringString {
+        [key: string]: string;
+    }
 
-interface StudentData {
-    name: string;
-    score: number;
-}
-
-interface MatrikelData { 
-    score: number;
-}
+    export interface StudentData {
+        name: string;
+        score: number;
+    }

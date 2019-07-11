@@ -1,4 +1,4 @@
-namespace DatabaseClient {
+namespace Abschlussaufgabe {
     window.addEventListener("load", init);
     //let serverAddress: string = "http://localhost:8100";
     let serverAddress: string = "https://fleischfackeln24.herokuapp.com/";    
