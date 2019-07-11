@@ -1,16 +1,15 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Simple server managing between client and database
  * @author: Jirka Dell'Oro-Friedl
  */
-//"tslint": "^5.16.0"
+Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
 const Database = require("./Database");
 console.log("Server starting");
 let port = Number(process.env.PORT);
-if (port == undefined)
+if (!port)
     port = 8100;
 let server = Http.createServer();
 server.addListener("listening", handleListen);
@@ -22,7 +21,7 @@ function handleListen() {
 function handleRequest(_request, _response) {
     console.log("Request received");
     let query = Url.parse(_request.url, true).query;
-    var command = query["command"];
+    let command = query["command"];
     switch (command) {
         case "insert":
             let abschlussarbeit = {
@@ -33,9 +32,7 @@ function handleRequest(_request, _response) {
             respond(_response, "storing data");
             break;
         case "refresh":
-            console.log("vor findAll");
             Database.findAll(findCallback);
-            console.log("nach findAll");
             break;
         default:
             respond(_response, "unknown command: " + command);

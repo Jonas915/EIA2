@@ -2,7 +2,7 @@
  * Simple server managing between client and database
  * @author: Jirka Dell'Oro-Friedl
  */
-//"tslint": "^5.16.0"
+
 import * as Http from "http";
 import * as Url from "url";
 import * as Database from "./Database";
@@ -10,7 +10,7 @@ import * as Database from "./Database";
 console.log("Server starting");
 
 let port: number = Number(process.env.PORT);
-if (port == undefined)
+if (!port)
     port = 8100;
 
 let server: Http.Server = Http.createServer();
@@ -28,7 +28,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     console.log("Request received");
 
     let query: AssocStringString = <AssocStringString> Url.parse(_request.url, true).query;
-    var command: string = query["command"];
+    let command: string = query["command"];
 
     switch (command) {
         case "insert":
@@ -40,11 +40,8 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             respond(_response, "storing data");
             break;
         case "refresh":
-            console.log("vor findAll");
             Database.findAll(findCallback);
-            console.log("nach findAll");
             break;
-       
         default:
             respond(_response, "unknown command: " + command);
             break;
