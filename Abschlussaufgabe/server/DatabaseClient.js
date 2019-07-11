@@ -4,7 +4,6 @@ var Abschlussaufgabe;
     //let serverAddress: string = "http://localhost:8100";
     let serverAddress = "https://fleischfackeln24.herokuapp.com/";
     function init(_event) {
-        console.log("Init");
         let insertButton = document.getElementById("insert");
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
@@ -15,12 +14,10 @@ var Abschlussaufgabe;
         let query = "command=insert";
         query += "&name=" + inputs[0].value;
         query += "&score=" + inputs[1].value;
-        console.log("neu" + query);
         sendRequest(query, handleInsertResponse);
     }
     function refresh(_event) {
         let query = "command=refresh";
-        console.log("2");
         sendRequest(query, handleFindResponse);
     }
     function sendRequest(_query, _callback) {
@@ -39,7 +36,6 @@ var Abschlussaufgabe;
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let output = document.getElementsByTagName("textarea")[0];
-            console.log(xhr.response);
             output.value = xhr.response;
         }
     }

@@ -4,7 +4,6 @@ namespace Abschlussaufgabe {
     let serverAddress: string = "https://fleischfackeln24.herokuapp.com/";    
     
     function init(_event: Event): void {
-        console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
@@ -16,13 +15,11 @@ namespace Abschlussaufgabe {
         let query: string = "command=insert";
         query += "&name=" + inputs[0].value;
         query += "&score=" + inputs[1].value;
-        console.log("neu" + query);
         sendRequest(query, handleInsertResponse);
     }
 
     function refresh(_event: Event): void {
         let query: string = "command=refresh";
-        console.log("2");
         sendRequest(query, handleFindResponse);
     }
     
@@ -45,7 +42,6 @@ namespace Abschlussaufgabe {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let output: HTMLTextAreaElement = document.getElementsByTagName("textarea")[0];
-            console.log(xhr.response);
             output.value = xhr.response;
         }
     }
