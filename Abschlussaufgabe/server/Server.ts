@@ -2,7 +2,7 @@
  * Simple server managing between client and database
  * @author: Jirka Dell'Oro-Friedl
  */
-
+//"tslint": "^5.16.0"
 import * as Http from "http";
 import * as Url from "url";
 import * as Database from "./Database";

@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@types/node": "^11.13.8",
-		"tslint": "^5.16.0"
+	"mongodb": "^3.2.5",
+	"tslint": "^5.16.0"
 	}
 }

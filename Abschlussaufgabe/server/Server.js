@@ -1,9 +1,10 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Simple server managing between client and database
  * @author: Jirka Dell'Oro-Friedl
  */
-Object.defineProperty(exports, "__esModule", { value: true });
+//"tslint": "^5.16.0"
 const Http = require("http");
 const Url = require("url");
 const Database = require("./Database");

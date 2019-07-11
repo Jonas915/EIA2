@@ -15,8 +15,8 @@ let abschlussaufgabe: Mongo.Collection;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://anyUser:savePasswort@clusterfuwa-pmutc.mongodb.net/fThisFingF";
-    databaseName = "fThisFingF";
+    databaseURL = "mongodb+srv://FlappyFishGame:FlappyFishGame@cluster0-oy8uv.mongodb.net/Fleischfackeln24";
+    databaseName = "Fleischfackeln24";
 }
 
 // try to connect to database, then activate callback "handleConnect" 
