@@ -2,7 +2,7 @@ namespace DatabaseClient {
     window.addEventListener("load", init);
     //let serverAddress: string = "http://localhost:8100";
     let serverAddress: string = "https://fleischfackeln24.herokuapp.com/";    
-
+    
     function init(_event: Event): void {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");

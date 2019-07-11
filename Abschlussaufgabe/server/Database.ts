@@ -13,7 +13,7 @@ let abschlussaufgabe: Mongo.Collection;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
-    databaseURL = "mongodb://FlappyFishGame:FlappyFishGame@databankjonas915-gnt0x.mongodb.net/Fleischfackeln24";
+    databaseURL = "mongodb://FlappyFishGame:FlappyFishGame@cluster0-oy8uv.mongodb.net/Fleischfackeln24";
     databaseName = "Fleischfackeln24";
 }
 
