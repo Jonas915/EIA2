@@ -1,8 +1,9 @@
 "use strict";
-/**
- * Simple server managing between client and database
- * @author: Jirka Dell'Oro-Friedl
- */
+/* Aufgabe: Abschlussaufgabe
+Name: Jonas Meujen
+Matrikel: 260231
+Datum: 27.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
@@ -29,7 +30,7 @@ function handleRequest(_request, _response) {
                 score: parseInt(query["score"])
             };
             Database.insert(abschlussarbeit);
-            respond(_response, "storing data");
+            respond(_response, "Erfolgreich eingetragen!");
             break;
         case "refresh":
             Database.findAll(findCallback);
@@ -38,16 +39,28 @@ function handleRequest(_request, _response) {
             respond(_response, "unknown command: " + command);
             break;
     }
-    // findCallback is an inner function so that _response is in scope
     function findCallback(json) {
         respond(_response, json);
     }
 }
 function respond(_response, _text) {
-    //console.log("Preparing response: " + _text);
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write(_text);
+    _response.write(playerDataSort);
     _response.end();
+}
+function playerDataSort(_a, _b) {
+    let returnNumber;
+    if (_a.score > _b.score) {
+        returnNumber = 1;
+    }
+    else if (_a.score < _b.score) {
+        returnNumber = -1;
+    }
+    else {
+        returnNumber = 0;
+    }
+    return returnNumber;
 }
 //# sourceMappingURL=Server.js.map

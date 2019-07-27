@@ -35,7 +35,7 @@ var lose = new Audio();
 scor.src = "sounds/score.mp3";
 lose.src = "sounds/lose.wav";
 
-// Bei Drücken einer Taste hochfliegen
+// Beim Drücken einer Taste hochfliegen
 
 document.addEventListener("keydown",moveUp);
 

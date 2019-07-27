@@ -1,8 +1,9 @@
 "use strict";
-/**
- * Simple database insertion and query for MongoDB
- * @author: Jirka Dell'Oro-Friedl
- */
+/* Aufgabe: Abschlussaufgabe
+Name: Jonas Meujen
+Matrikel: 260231
+Datum: 27.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 Object.defineProperty(exports, "__esModule", { value: true });
 const Mongo = require("mongodb");
 console.log("Database starting");

@@ -1,7 +1,8 @@
-* /*{
-	display: block;
-	
-}*/
+/* Aufgabe: Abschlussaufgabe
+Name: Jonas Meujen
+Matrikel: 260231
+Datum: 27.07.2019 
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert. */
 
 head {
 	display: none;
@@ -11,4 +12,61 @@ fieldset {
 	width: 100px;
 	float: right;
 	position: top;
+}
+
+#reload {
+	font-size: 1.5rem;
+	border-color: blue;
+	background-color: lightblue;
+	width: 220px;
+	height: 50px;
+}
+
+#refresh {
+	font-size: 1.5rem;
+	border-color: blue;
+	background-color: lightblue;
+	width: 180px;
+	height: 40px;
+}
+
+#insert {
+	margin-top: 20px;
+	font-size: 1rem;
+	border-color: blue;
+	background-color: lightblue;
+	width: 180px;
+	height: 50px;	
+}
+
+#input {
+	font-size: 1.5rem;
+	background-color: #ADABAA;
+	border-color: blue;
+	border-width: 3px;
+}
+
+#output {
+	font-size: 1.5rem;
+	background-color: #ADABAA;
+	border-color: blue;
+	border-width: 3px;	
+}
+
+input {
+	background-color: lightblue;
+}
+
+textarea {
+	background-color: lightblue;
+}
+
+#name {
+	width: 12rem;
+	height: 2rem;
+}
+
+#matrikel {
+	width: 12rem;
+	height: 2rem;
 }

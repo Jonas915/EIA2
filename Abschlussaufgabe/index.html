@@ -1,27 +1,36 @@
-<!DOCTYPE html>
+<!-- Aufgabe: Abschlussaufgabe
+Name: Jonas Meujen
+Matrikel: 260231
+Datum: 27.07.2019 
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+ -->
+ <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Datenbank & Client</title>
-<meta charset="utf-8" />
-<link rel="stylesheet" href="./server/DatabaseClient.css" type="text/css" media="screen"/>
-<script src="./server/DatabaseClient.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+	<title>Flappy Fish</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="./server/DatabaseClient.css" type="text/css" media="screen" />
+	<script src="./server/DatabaseClient.js" type="text/javascript" charset="utf-8"></script>
 </head>
+
 <body>
 	<canvas id="canvas" width="288" height="512"></canvas>
-	<button onclick="reload()" id="reload">Spiel neu straten</button>
-	
-    
-	 <fieldset id="input">
+	<button id="reload" onclick="reload()" id="reload">Spiel neu starten</button>
+	<fieldset id="input">
 		<legend>Name eingeben</legend>
-		<input type="text" name="name" placeholder="Gib hier deinen Namen ein" id="name"/>
-		<input type="text" name="matrikel" placeholder="Score" id="matrikel" />
-		<button type="button" id="insert">Zur Datenbank hinzufügen</button>
+		<input type="text" name="name" placeholder="Name" id="name" />
+		<input type="text" name="matrikel" placeholder="Score" id="matrikel" readonly/>
+		<button type="button" id="insert">In die Highscoreliste eintragen</button>
 	</fieldset>
 	<fieldset id="output">
-		<legend>Highscore Liste </legend>
+		<legend>Highscoreliste </legend>
 		<button type="button" id="refresh">Aktualisieren</button>
 		<textarea rows="20" cols="90"> </textarea>
 	</fieldset>
 	<script src="main.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,8 @@
+/* Aufgabe: Abschlussaufgabe
+Name: Jonas Meujen
+Matrikel: 260231
+Datum: 27.07.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 var Abschlussaufgabe;
 (function (Abschlussaufgabe) {
     window.addEventListener("load", init);

@@ -1,7 +1,8 @@
-/**
- * Simple server managing between client and database
- * @author: Jirka Dell'Oro-Friedl
- */
+/* Aufgabe: Abschlussaufgabe
+Name: Jonas Meujen
+Matrikel: 260231
+Datum: 27.07.2019 
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.*/
 
 import * as Http from "http";
 import * as Url from "url";
@@ -17,7 +18,6 @@ let server: Http.Server = Http.createServer();
 server.addListener("listening", handleListen);
 server.addListener("request", handleRequest);
 server.listen(port);
-
 
 
 function handleListen(): void {
@@ -37,7 +37,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
                 score: parseInt(query["score"])
             };
             Database.insert(abschlussarbeit);
-            respond(_response, "storing data");
+            respond(_response, "Erfolgreich eingetragen!");
             break;
         case "refresh":
             Database.findAll(findCallback);
@@ -47,16 +47,30 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             break;
     }
 
-    // findCallback is an inner function so that _response is in scope
+ 
     function findCallback(json: string): void {
         respond(_response, json);
     }
 }
 
 function respond(_response: Http.ServerResponse, _text: string): void {
-    //console.log("Preparing response: " + _text);
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.write(_text);
+    _response.write(playerDataSort);
     _response.end();
+}
+
+function playerDataSort(_a: StudentData, _b: StudentData): number {
+    let returnNumber: number;
+    if (_a.score > _b.score) {
+        returnNumber = 1;
+    }
+    else if (_a.score < _b.score) {
+        returnNumber = -1;
+    }
+    else {
+        returnNumber = 0;
+    }
+    return returnNumber;
 }
